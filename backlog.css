@@ -12,6 +12,7 @@ table {
 .backlogTableRow {
     height: 80px;
     background-color: #f4f3fb;
+    display: flex;
 }
 
 .backlogAssignedToPicture {
