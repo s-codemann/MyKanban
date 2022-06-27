@@ -15,6 +15,10 @@ table {
     display: flex;
 }
 
+.backlogTableRow tr {
+    width: calc(33% - 8px);
+}
+
 .backlogAssignedToPicture {
     height: 40px;
     width: 40px;
@@ -44,11 +48,23 @@ table {
     margin-bottom: 32px;
 }
 
-.urgency {
+.urgencyColor {
     background-color: black;
+    width: 4px;
 }
 
 .assignedTo {
     display: flex;
     align-items: center;
+    width: 35%;
+}
+
+.category {
+    width: 25%;
+}
+
+.details {
+    border-bottom-right-radius: 32px; 
+    border-top-right-radius: 32px; 
+    width: 40%;
 }
