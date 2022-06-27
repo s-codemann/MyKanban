@@ -1,0 +1,53 @@
+body {
+    font-family: PT Sans;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.backlogTableRow {
+    height: 80px;
+    background-color: #f4f3fb;
+}
+
+.backlogAssignedToPicture {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-left: 8px;
+    margin-right: 16px;
+}
+
+.placeholder {
+    height: 10px;
+}
+
+.headline {
+    margin: 0;
+}
+
+.margin0 {
+    margin: 0;
+}
+
+.fontColor {
+    color: #1E3190;
+}
+
+.marginBottom {
+    margin-bottom: 32px;
+}
+
+.urgency {
+    background-color: black;
+}
+
+.assignedTo {
+    display: flex;
+    align-items: center;
+}
