@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addTask</title>
+    <link rel="stylesheet" href="addTask.css">
+</head>
+
+<body>
+    <div class="firstSection">
+        <h2>Add Task</h2>
+        <span>Learning Managment System Projekt</span>
+    </div>
+    <div class="secondSection">
+        <div class="firstRow d-flex">
+            <div class="titleDiv">
+                <span>Title</span>
+                <input type="text">
+            </div>
+            <div class="dueDateDiv">
+                <span>Due Date</span>
+                <input type="date">
+            </div>
+        </div>
+        <div class="secondRow d-flex">
+            <div class="categoryDiv">
+                <span>Category</span>
+                <form action="">
+                    <select name="categories" id="categories">
+                        <option value="managment">Management</option>
+                        <option value="production">Production</option>
+                        <option value="sales">Sales</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="warehouse">Warehouse</option>
+                    </select>
+                </form>
+            </div>
+            <div class="urgencyDiv">
+                <span>Urgency</span>
+                <form action="">
+                    <select name="urgency" id="urgency">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="thirdRow d-flex">
+            <div class="descriptionDiv">
+                <span>Description</span>
+                <input type="text">
+            </div>
+            <div class="assignedToDiv">
+                <span>Assigned To</span>
+                <div class="avatarDiv"></div>
+                <div class="actionsDiv">
+                    <button>Cancel</button>
+                    <button>Create Task</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

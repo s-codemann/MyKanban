@@ -1,0 +1,22 @@
+    body {
+        margin: 0;
+    }
+    
+    .firstSection {
+        margin: 20px;
+    }
+    
+    .secondSection {
+        margin: 20px;
+        background-color: rgba(8, 8, 165, 0.288);
+        padding: 25px;
+    }
+    
+    .d-flex {
+        display: flex;
+    }
+    
+    .d-flex-col {
+        display: flex;
+        flex-direction: column;
+    }
