@@ -6,7 +6,6 @@ fetch("./sidebar.html")
     sidebarContainer.innerHTML = text;
     const sidebar = document.getElementById("sidebar");
     const sidebarToggle = document.getElementById("sidebar-toggle");
-    console.log("test");
     sidebarToggle.addEventListener("click", function toggle() {
       sidebar.classList.toggle("sidebar-small");
       sidebar.classList.contains("d_none")
@@ -14,7 +13,6 @@ fetch("./sidebar.html")
         : setTimeout(() => {
             sidebar.classList.add("d_none");
           }, 500);
-      console.log(this);
       this.classList.toggle("burger-small");
       document.querySelector("main").classList.toggle("small");
     });
