@@ -1,6 +1,20 @@
+.dNone {
+    display: none;
+}
+
 body {
     font-family: PT Sans;
     margin: 0;
+}
+
+.backlog {
+    margin-left: 160px;
+    margin-top: 80px;
+    margin-right: 20px;
+}
+
+.tableHeadline {
+    display: flex;
 }
 
 table {
@@ -9,25 +23,12 @@ table {
     border-collapse: collapse;
 }
 
-.backlogTableRow {
-    height: 80px;
-    border-bottom-right-radius: 10px; 
-    border-top-right-radius: 10px; 
-    border-bottom-left-radius: 8px; 
-    border-top-left-radius: 8px; 
-    display: flex;
-}
-
-.backlogTableRow tr {
-    width: calc(33% - 8px);
-}
-
 .backlogAssignedToPicture {
     height: 40px;
     width: 40px;
     object-fit: cover;
     border-radius: 100%;
-    margin-left: 8px;
+    margin-left: 6px;
     margin-right: 16px;
 }
 
@@ -51,12 +52,26 @@ table {
     margin-bottom: 32px;
 }
 
-.urgency {
-    width: 4px;
+.assignedToHeadline {
+    width: 35%;
+    text-align: center;
 }
 
-.urgencyColor {
-    background-color: black;
+.categoryHeadline {
+    width: 25%;
+    text-align: center;
+}
+
+.detailsContainer {
+    width: 40%;
+}
+
+.backlogContainer {
+    height: 80px;
+    display: flex;
+    background-color: #f4f3fb;
+    border-radius: 16px;
+    border-left: solid red 12px;
 }
 
 .urgencyColorRed {
@@ -64,26 +79,129 @@ table {
 }
 
 .assignedTo {
-    background-color: #f4f3fb;
     display: flex;
     align-items: center;
     width: 35%;
 }
 
 .category {
-    background-color: #f4f3fb;
     width: 25%;
     display: flex;
     align-items: center;
-
+    justify-content: center;
 }
 
 .details {
-    background-color: #f4f3fb;
-    border-bottom-right-radius: 8px; 
-    border-top-right-radius: 8px; 
     display: flex;
+    justify-content: center;
     align-items: center;
-    width: 35%;
-    width: 40%;
+    overflow: hidden;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+}
+
+.detailsHeadline {
+    display: block;
+}
+
+.detailsHeadlineResponsiv {
+    display: none;
+}
+
+@media (max-width: 678px) {
+    .backlog {
+        margin-left: 20px;
+    }
+
+    .backlogContainer {
+        flex-wrap: wrap;
+        height: 160px;
+    }
+
+    .assignedToHeadline {
+        width: 60%;
+        text-align: unset;
+        margin-left: 12px;
+    }
+
+    .categoryHeadline {
+        width: 40%;
+        text-align: center;
+    }
+
+    .assignedTo {
+        width: 60%;
+        height: 80px;
+    }
+
+    .category {
+        width: 40%;
+        height: 80px;
+        margin: 0;
+    }
+
+    .details {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: 6px;
+        margin-left: 6px;
+        justify-content: unset;
+    }
+
+    .details p {
+        margin: 0;
+    }
+
+    .detailsHeadline {
+        display: none;
+    }
+
+    .detailsContainer {
+        width: 90%;
+    }
+
+    .detailsHeadlineResponsiv {
+        display: block !important;
+        margin: 0;
+        margin-left: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .backlogContainer {
+        height: 200px;
+    }
+
+    .backlogAssignedToPicture {
+        display: none;
+    }
+
+    .assignedTo {
+        margin-left: 6px;
+        width: 55%;
+    }
+
+    .category {
+        width: 42%;
+    }
+
+    .backlog {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .assignedToHeadline {
+        margin-left: 0;
+    }
+
+    .detailsContainer {
+        height: 100px;
+    }
+
+    .assignedTo {
+        height: 100px;
+    }
 }
