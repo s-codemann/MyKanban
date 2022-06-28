@@ -59,8 +59,6 @@
   width: 5px;
   bottom: 0;
   left: 2px;
-<<<<<<< HEAD
-=======
 
   transition: all 300ms;
 }
@@ -101,7 +99,6 @@
 }
 .d_none {
   display: none;
->>>>>>> 055a6754187de508b58b2d85ab50512ad2a49195
 }
 
 .logo {
