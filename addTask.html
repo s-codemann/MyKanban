@@ -2,68 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>addTask</title>
-    <link rel="stylesheet" href="addTask.css">
+    <link rel="stylesheet" href="addTask.css"/>
+    <link rel="stylesheet" href="sidebar.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
+    <script defer src="sidebar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="firstSection">
-        <h2>Add Task</h2>
-        <span>Learning Managment System Projekt</span>
-    </div>
-    <div class="secondSection">
-        <div class="firstRow d-flex">
-            <div class="titleDiv">
-                <span>Title</span>
-                <input type="text">
-            </div>
-            <div class="dueDateDiv">
-                <span>Due Date</span>
-                <input type="date">
-            </div>
+    <div id="sidebar-cont"></div>
+    <div class="allContainers">
+        <div class="firstSection">
+            <h2 class="bold">Add Task</h2>
+            <span>Learning Managment System Projekt</span>
         </div>
-        <div class="secondRow d-flex">
-            <div class="categoryDiv">
-                <span>Category</span>
-                <form action="">
-                    <select name="categories" id="categories">
-                        <option value="managment">Management</option>
+        <div class="secondSection">
+            <div class="firstRow dFlex">
+                <div class="titleDiv d-flex-col">
+                    <span>TITLE</span>
+                    <input type="text" placeholder="Type your title here">
+                </div>
+                <div class="dueDateDiv d-flex-col">
+                    <span>DUE DATE</span>
+                    <input type="date"/>
+                </div>
+            </div>
+            <div class="secondRow dFlex">
+                <div class="categoryDiv d-flex-col">
+                    <span>CATEGORY</span>
+                    <select class="form-select" aria-label="Default select example">
+
+                        <option value="humanResources">Human Resources</option>
+                        <option value="marketing">Marketing</option>
                         <option value="production">Production</option>
                         <option value="sales">Sales</option>
-                        <option value="marketing">Marketing</option>
                         <option value="warehouse">Warehouse</option>
                     </select>
-                </form>
-            </div>
-            <div class="urgencyDiv">
-                <span>Urgency</span>
-                <form action="">
-                    <select name="urgency" id="urgency">
+                </div>
+                <div class="urgencyDiv d-flex-col">
+                    <span>URGENCY</span>
+                    <select class="form-select" aria-label="Default select example">
                         <option value="high">High</option>
                         <option value="medium">Medium</option>
                         <option value="low">Low</option>
-                    </select>
-                </form>
+                        </select>
+                </div>
+
             </div>
-        </div>
-        <div class="thirdRow d-flex">
-            <div class="descriptionDiv">
-                <span>Description</span>
-                <input type="text">
-            </div>
-            <div class="assignedToDiv">
-                <span>Assigned To</span>
-                <div class="avatarDiv"></div>
-                <div class="actionsDiv">
-                    <button>Cancel</button>
-                    <button>Create Task</button>
+            <div class="thirdRow dFlex">
+                <div class="descriptionDiv d-flex-col">
+                    <span>DESCRIPTION</span>
+                    <textarea size="200" style="font-size:12pt;height:200px;width:500px;" placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, saepe cumque nemo ab iste officiis distinctio dignissimos natus rerum nam sint, id optio ut minima sapiente dolores repellat. Quis, eaque!"></textarea>
+                </div>
+                <div class="actionsDiv ">
+                    <span>ASSIGNED TO
+                        <div class="">
+                        <div class="avatars">avatar</div>
+                        <div><img src="img/" alt=""></div>
+                        </div>
+                    </span>
+                    <div class="actionButtons dFlex">
+                        <button class="cancelBtn">CANCEL</button>
+                        <button class="createBtn">CREATE TASK</button>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
+
 
 </body>
 

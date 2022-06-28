@@ -5,41 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Backlog</title>
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="backlog.css">
+    <script defer src="sidebar.js"></script>
+    <link rel="stylesheet" href="sidebar.css">
     <!-- <script src="./mini_backend.js"></script> -->
 </head>
 
 <body>
-    <div>
+    <nav id="sidebar-cont">
+
+    </nav>
+    <div class="backlog">
         <h1 class="headline">Backlog</h1>
         <p class="margin0 fontColor marginBottom">Learning Management System Project</p>
-        <table id="backlogTable">
-            <tr>
-                <th style="width: 4px;"></th>
-                <th class="fontColor" style="width: 35%;">ASSIGNED TO</th>
-                <th class="fontColor" style="width: 25%;">CATEGORY</th>
-                <th class="fontColor" style="width: 40%;">DETAILS</th>
-            </tr>
-            <tr class="placeholder"></tr>
-        </table>
-        <table>
-            <tr id="backlogContainer" class="backlogTableRow urgencyColor">
-                <td id="urgency" class="urgency">
-                </td>
-                <td id="assignedTo" class="assignedTo" class="category">
-                    <img src="img/guy.jpg" alt="" class="backlogAssignedToPicture">
-                    <div>
-                        <p class="margin0">Vorname, Nachname</p>
-                        <p class="fontColor margin0">Email</p>
+        <div>
+            <div id="backlogTable">
+                <div class="tableHeadline">
+                    <h3 class="fontColor assignedToHeadline">ASSIGNED TO</h3>
+                    <h3 class="fontColor categoryHeadline">CATEGORY</h3>
+                    <h3 class="fontColor detailsHeadline" style="width: 40%; text-align: center;">DETAILS</h3>
+                </div>
+            </div>
+            <div>
+                <div id="backlogContainer" class="backlogContainer">
+                    <div id="assignedTo" class="assignedTo" class="category">
+                        <img src="img/guy.jpg" alt="" class="backlogAssignedToPicture">
+                        <div>
+                            <p class="margin0">Vorname, Nachname</p>
+                            <p class="fontColor margin0">Email</p>
+                        </div>
                     </div>
-                </td>
-                <td id="category" class="category">marketing</td>
-                <td id="datails" class="details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laborum vitae doloribus ratione inventore accusantium, fuga unde? Odio, placeat neque! Exercitationem porro beatae, veritatis inventore dolorem cumque tenetur illum odio.</td>
-            </tr>
-            <tr class="placeholder"></tr>
-        </table>
+                    <p id="category" class="category">Marketing</p>
+                    <div class="detailsContainer">
+                        <h3 class="fontColor detailsHeadlineResponsiv">DETAILS</h3>
+                        <p id="datails" class="details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
