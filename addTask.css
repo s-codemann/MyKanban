@@ -335,7 +335,6 @@ body {
 
 }
 
-<<<<<<< HEAD
 @media (max-width: 970px){
 .dFlex{
   display: block !important;
@@ -434,10 +433,3 @@ margin-left: 50px;
 @media (max-width: 970px){
 
 }
-=======
-@media (max-width: 970px) {
-  .dFlex {
-    display: block !important;
-  }
-}
->>>>>>> 5615814f3bd16d68c6674d26314ccc2d645d461c
