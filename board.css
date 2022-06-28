@@ -92,13 +92,20 @@ body {
   margin-right: 10px;
   margin-left: auto;
   width: calc(100% - 160px);
-  width: 85%;
 }
 @media (max-width: 960px) {
   .column {
     height: 40%;
   }
   .columns-container {
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .column:hover {
+    flex-grow: 0;
+    height: 70%;
+  }
+  .column {
+    flex-grow: 1;
   }
 }
