@@ -21,7 +21,11 @@
   margin-left: 20%;
   margin-top: 30px;
 }
-
+.small {
+  margin-right: 10px;
+  margin-left: auto;
+  width: calc(100% - 160px);
+}
 .navCont {
   height: 30%;
   width: 100%;
@@ -63,10 +67,7 @@
   transition: all 300ms;
 }
 
-/*
 
-
-*/
 .sidebar-toggle {
   position: absolute;
   top: 20px;
@@ -99,7 +100,12 @@
 }
 .d_none {
   display: none;
+<<<<<<< HEAD
+=======
+
+>>>>>>> bfefb401466efbc4143957f13a48ef781ec799a9
 }
+
 
 .logo {
   width: 50px;
