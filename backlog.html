@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,55 +9,34 @@
     <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="backlog.css" />
     <script defer src="sidebar.js"></script>
+    <script src="backlog.js"></script>
     <link rel="stylesheet" href="sidebar.css" />
     <!-- <script src="./mini_backend.js"></script> -->
-  </head>
+</head>
 
-  <body>
+<body>
     <nav id="sidebar-cont"></nav>
     <main class="small">
-      <div class="backlog">
-        <h1 class="headline">Backlog</h1>
-        <p class="margin0 fontColor marginBottom">
-          Learning Management System Project
-        </p>
-        <div>
-          <div id="backlogTable">
-            <div class="tableHeadline">
-              <h3 class="fontColor assignedToHeadline">ASSIGNED TO</h3>
-              <h3 class="fontColor categoryHeadline">CATEGORY</h3>
-              <h3
-                class="fontColor detailsHeadline"
-                style="width: 40%; text-align: center"
-              >
-                DETAILS
-              </h3>
-            </div>
-          </div>
-          <div>
-            <div id="backlogContainer" class="backlogContainer">
-              <div id="assignedTo" class="assignedTo" class="category">
-                <img
-                  src="img/guy.jpg"
-                  alt=""
-                  class="backlogAssignedToPicture"
-                />
+        <div class="backlog" id="backlog">
+            <h1 class="headline">Backlog</h1>
+            <p class="margin0 fontColor marginBottom">
+                Learning Management System Project
+            </p>
+            <div>
                 <div>
-                  <p class="margin0">Vorname, Nachname</p>
-                  <p class="fontColor margin0">Email</p>
+                    <div class="tableHeadline">
+                        <h3 class="fontColor assignedToHeadline">ASSIGNED TO</h3>
+                        <h3 class="fontColor categoryHeadline">CATEGORY</h3>
+                        <h3 class="fontColor detailsHeadline" style="width: 40%; text-align: center">
+                            DETAILS
+                        </h3>
+                    </div>
                 </div>
-              </div>
-              <p id="category" class="category">Marketing</p>
-              <div class="detailsContainer">
-                <h3 class="fontColor detailsHeadlineResponsiv">DETAILS</h3>
-                <p id="datails" class="details">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-              </div>
+                <div id="backlogItem"></div>
+                    
             </div>
-          </div>
         </div>
-      </div>
     </main>
-  </body>
+</body>
+
 </html>
