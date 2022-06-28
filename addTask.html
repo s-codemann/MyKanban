@@ -25,6 +25,7 @@
       href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script defer src="./addTask.js"></script>
     <script src="mini_backend.js"></script>
     <script type="text/javascript">
       setURL(
@@ -44,17 +45,25 @@
           <div class="firstRow dFlex">
             <div class="titleDiv d-flex-col">
               <span>TITLE</span>
-              <input type="text" placeholder="Type your title here" />
+              <input
+                id="title"
+                type="text"
+                placeholder="Type your title here"
+              />
             </div>
             <div class="dueDateDiv d-flex-col">
               <span>DUE DATE</span>
-              <input type="date" />
+              <input id="date" type="date" />
             </div>
           </div>
           <div class="secondRow dFlex">
             <div class="categoryDiv d-flex-col">
               <span>CATEGORY</span>
-              <select class="form-select" aria-label="Default select example">
+              <select
+                class="form-select"
+                id="category"
+                aria-label="Default select example"
+              >
                 <option value="humanResources">Human Resources</option>
                 <option value="marketing">Marketing</option>
                 <option value="production">Production</option>
@@ -64,7 +73,11 @@
             </div>
             <div class="urgencyDiv d-flex-col">
               <span>URGENCY</span>
-              <select class="form-select" aria-label="Default select example">
+              <select
+                id="urgency"
+                class="form-select"
+                aria-label="Default select example"
+              >
                 <option value="high">High</option>
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>
@@ -75,6 +88,7 @@
             <div class="descriptionDiv d-flex-col">
               <span>DESCRIPTION</span>
               <textarea
+                id="description"
                 size="200"
                 style="font-size: 12pt; height: 200px; width: 500px"
                 placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, saepe cumque nemo ab iste officiis distinctio dignissimos natus rerum nam sint, id optio ut minima sapiente dolores repellat. Quis, eaque!"
@@ -89,8 +103,8 @@
                 </div>
               </span>
               <div class="actionButtons dFlex">
-                <button class="cancelBtn">CANCEL</button>
-                <button class="createBtn">CREATE TASK</button>
+                <button id="cancel" class="cancelBtn">CANCEL</button>
+                <button id="create" class="createBtn">CREATE TASK</button>
               </div>
             </div>
           </div>
