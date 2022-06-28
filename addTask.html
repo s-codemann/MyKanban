@@ -33,7 +33,7 @@
       );
     </script>
   </head>
-  <body>
+  <body onload="init()">
     <main class="small">
       <div id="sidebar-cont"></div>
       <div class="allContainers">
@@ -41,74 +41,78 @@
           <h2 class="bold">Add Task</h2>
           <span>Learning Managment System Projekt</span>
         </div>
-        <div class="secondSection">
-          <div class="firstRow dFlex">
-            <div class="titleDiv d-flex-col">
-              <span>TITLE</span>
-              <input
-                id="title"
-                type="text"
-                placeholder="Type your title here"
-              />
+        <form onsubmit="inputToObject()">
+          <div class="secondSection">
+            <div class="firstRow dFlex">
+              <div class="titleDiv d-flex-col">
+                <span>TITLE</span>
+                <input
+                  id="title"
+                  type="text"
+                  placeholder="Type your title here"
+                />
+              </div>
+              <div class="dueDateDiv d-flex-col">
+                <span>DUE DATE</span>
+                <input id="date" type="date" />
+              </div>
             </div>
-            <div class="dueDateDiv d-flex-col">
-              <span>DUE DATE</span>
-              <input id="date" type="date" />
+            <div class="secondRow dFlex">
+              <div class="categoryDiv d-flex-col">
+                <span>CATEGORY</span>
+                <select
+                  class="form-select"
+                  id="category"
+                  aria-label="Default select example"
+                >
+                  <option value="humanResources">Human Resources</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="production">Production</option>
+                  <option value="sales">Sales</option>
+                  <option value="warehouse">Warehouse</option>
+                </select>
+              </div>
+              <div class="urgencyDiv d-flex-col">
+                <span>URGENCY</span>
+                <select
+                  id="urgency"
+                  class="form-select"
+                  aria-label="Default select example"
+                >
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="secondRow dFlex">
-            <div class="categoryDiv d-flex-col">
-              <span>CATEGORY</span>
-              <select
-                class="form-select"
-                id="category"
-                aria-label="Default select example"
-              >
-                <option value="humanResources">Human Resources</option>
-                <option value="marketing">Marketing</option>
-                <option value="production">Production</option>
-                <option value="sales">Sales</option>
-                <option value="warehouse">Warehouse</option>
-              </select>
-            </div>
-            <div class="urgencyDiv d-flex-col">
-              <span>URGENCY</span>
-              <select
-                id="urgency"
-                class="form-select"
-                aria-label="Default select example"
-              >
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
-              </select>
-            </div>
-          </div>
-          <div class="thirdRow dFlex">
-            <div class="descriptionDiv d-flex-col">
-              <span>DESCRIPTION</span>
-              <textarea
-                id="description"
-                size="200"
-                style="font-size: 12pt; height: 200px; width: 500px"
-                placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, saepe cumque nemo ab iste officiis distinctio dignissimos natus rerum nam sint, id optio ut minima sapiente dolores repellat. Quis, eaque!"
-              ></textarea>
-            </div>
-            <div class="actionsDiv">
-              <span
-                >ASSIGNED TO
-                <div class="">
-                  <div class="avatars">avatar</div>
-                  <div><img src="img/" alt="" /></div>
+            <div class="thirdRow dFlex">
+              <div class="descriptionDiv d-flex-col">
+                <span>DESCRIPTION</span>
+                <textarea
+                  id="description"
+                  size="200"
+                  style="font-size: 12pt; height: 200px; width: 500px"
+                  placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, saepe cumque nemo ab iste officiis distinctio dignissimos natus rerum nam sint, id optio ut minima sapiente dolores repellat. Quis, eaque!"
+                ></textarea>
+              </div>
+              <div class="actionsDiv">
+                <span
+                  >ASSIGNED TO
+                  <div class="">
+                    <div class="avatars">avatar</div>
+                    <div><img src="img/" alt="" /></div>
+                  </div>
+                </span>
+                <div class="actionButtons dFlex">
+                  <button id="cancel" class="cancelBtn">CANCEL</button>
+                  <button type="submit" id="create" class="createBtn">
+                    CREATE TASK
+                  </button>
                 </div>
-              </span>
-              <div class="actionButtons dFlex">
-                <button id="cancel" class="cancelBtn">CANCEL</button>
-                <button id="create" class="createBtn">CREATE TASK</button>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </main>
   </body>
