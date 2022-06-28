@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-</head>
-
-<body>
-    <p>test v300</p>
-    <h1>Maik ich bins ... </h1>
-    <h3>test test </h3>
-    <h4>
-        ha ha
-    </h4>
-</body>
-
+    <title>Board</title>
+    <link rel="stylesheet" href="board.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+    <script defer src="sidebar.js"></script>
+    <script src="mini_backend.js"></script>
+    <script type="text/javascript">
+      setURL(
+        "https://www.sascha-brodmann.developerakademie.net/smallest_backend_ever"
+      );
+    </script>
+  </head>
+  <body>
+    <main id="columns-container" class="columns-container small">
+      <div class="column first" draggable="true"></div>
+      <div class="column second"></div>
+      <div class="column third"></div>
+      <div class="column fourth"></div>
+    </main>
+    <nav id="sidebar-cont"></nav>
+  </body>
 </html>

@@ -98,11 +98,9 @@ body {
     height: 40%;
   }
   .columns-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
   }
   .column:hover {
-    flex-grow: 0;
+    flex-grow: 1;
     height: 70%;
   }
   .column {
