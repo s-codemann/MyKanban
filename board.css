@@ -96,12 +96,13 @@ body {
 @media (max-width: 960px) {
   .column {
     height: 40%;
+    width: 40%;
   }
   .columns-container {
   }
   .column:hover {
     flex-grow: 1;
-    height: 70%;
+    height: 50%;
   }
   .column {
     flex-grow: 1;
