@@ -21,7 +21,11 @@
   margin-left: 20%;
   margin-top: 30px;
 }
-
+.small {
+  margin-right: 10px;
+  margin-left: auto;
+  width: calc(100% - 160px);
+}
 .navCont {
   height: 30%;
   width: 100%;
