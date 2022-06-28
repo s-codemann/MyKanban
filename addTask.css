@@ -1,22 +1,144 @@
-    body {
-        margin: 0;
-    }
-    
-    .firstSection {
-        margin: 20px;
-    }
-    
-    .secondSection {
-        margin: 20px;
-        background-color: rgba(8, 8, 165, 0.288);
-        padding: 25px;
-    }
-    
-    .d-flex {
-        display: flex;
-    }
-    
-    .d-flex-col {
-        display: flex;
-        flex-direction: column;
-    }
+body {
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.secondSection span {
+  font-weight: bold;
+  color:blue
+}
+
+.allContainers {
+  margin-left: 140px;
+  position: relative;
+}
+
+.firstSection {
+  margin: 20px;
+}
+
+.secondSection {
+  margin: 20px;
+  background-color: #edffe3;
+  padding: 25px;
+  max-height: 70vh;
+  border-radius: 8px;
+}
+
+.secondSection span {
+  margin-bottom: 10px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleDiv {
+  width: 550px;
+  margin-right: 100px;
+  margin-bottom: 40px;
+}
+
+.titleDiv input {
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid grey;
+  width: 500px;
+}
+
+.dueDateDiv {
+  margin-right: 100px;
+  margin-bottom: 40px;
+}
+
+.dueDateDiv input {
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid grey;
+  width: 500px;
+}
+
+.form-select {
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid grey !important;
+  width: 500px;
+}
+
+.categoryDiv {
+  width: 550px;
+  margin-right: 100px;
+  margin-bottom: 40px;
+}
+
+.categoryDiv select {
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid grey;
+  width: 500px;
+}
+
+.urgencyDiv {
+  margin-right: 100px;
+  margin-bottom: 40px;
+}
+.urgencyDiv select {
+    height: 40px;
+  border-radius: 5px;
+  border: 2px solid grey;
+  width: 500px;
+}
+
+.descriptionDiv{
+  width: 550px;
+  margin-right: 100px;
+  margin-bottom: 40px;
+}
+
+.descriptionDiv textarea {
+  height: 200px;
+  border-radius: 5px;
+  border: 2px solid grey;
+  width: 500px;
+  text-align: start;
+  resize: none;
+
+}
+
+.actionsDiv {
+  margin-right: 100px;
+  margin-bottom: 40px;
+}
+
+.avatars{
+  margin: 50px ;
+}
+
+.actionButtons{
+
+  margin-left: 280px;
+}
+
+.actionButtons button {
+  background: none;
+  border: none;
+}
+
+.createBtn{
+  background-color: blue !important;
+  color: white;
+  padding: 15px;
+  margin-left: 25px;
+  border-radius: 8px;
+}
+
+

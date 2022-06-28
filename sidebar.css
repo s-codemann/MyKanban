@@ -1,54 +1,58 @@
 #sidebar {
-  position: absolute;
-  height: 95%;
-  left: 0;
-  top: 2.5%;
-  width: 140px;
-  border: 2px solid blue;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: rgb(29, 29, 192);
-  box-shadow: 0 2px 5px 0px black;
-  border-radius: 3px;
+    position: absolute;
+    height: 95%;
+    left: 0;
+    top: 2.5%;
+    width: 140px;
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(29, 29, 192);
+    box-shadow: 0 2px 5px 0px black;
+    border-radius: 3px;
 }
-.logo {
-  width: 50px;
-  margin-left: 20%;
-  margin-top: 30px;
-}
-.navCont {
-  height: 30%;
-  width: 100%;
-  color: white;
-  margin-bottom: auto;
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 25%;
-  cursor: pointer;
-  position: relative;
-}
-.link::after {
-  content: "";
-  height: 0%;
-}
-.link:hover::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  background-color: white;
-  width: 5px;
-  bottom: 0;
-  left: 2px;
 
-  transition: all 300ms;
+.logo {
+    width: 50px;
+    margin-left: 20%;
+    margin-top: 30px;
+}
+
+.navCont {
+    height: 30%;
+    width: 100%;
+    color: white;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    cursor: pointer;
+    position: relative;
+}
+
+.link::after {
+    content: "";
+    height: 0%;
+}
+
+.link:hover::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: white;
+    width: 5px;
+    bottom: 0;
+    left: 2px;
+    transition: all 300ms;
 }
