@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 .bold {
@@ -9,12 +9,12 @@ body {
 
 .secondSection span {
   font-weight: bold;
-  color: blue
+  color: blue;
 }
 
 .allContainers {
-  margin-left: 140px;
   position: relative;
+  z-index: -5;
 }
 
 .firstSection {
@@ -27,7 +27,7 @@ body {
 
 .secondSection {
   margin: 20px;
-  background-color: #F4F3FB;
+  background-color: #f4f3fb;
   padding: 25px;
   max-height: fit-content !important;
   border-radius: 8px;
@@ -116,7 +116,6 @@ body {
   width: 500px;
   text-align: start;
   resize: none;
-
 }
 
 .actionsDiv {
@@ -129,7 +128,6 @@ body {
 }
 
 .actionButtons {
-
   margin-left: 280px;
 }
 
@@ -152,9 +150,7 @@ body {
   border-radius: 8px;
 }
 
-
 @media (max-width: 1500px) {
-
   .titleDiv {
     width: 450px;
     margin-right: 60px;
@@ -225,7 +221,6 @@ body {
     width: 400px !important;
     text-align: start;
     resize: none;
-
   }
 
   .actionsDiv {
@@ -238,14 +233,11 @@ body {
   }
 
   .actionButtons {
-
     margin-left: 180px;
   }
-
 }
 
 @media (max-width: 1200px) {
-
   .titleDiv {
     width: 350px;
     margin-right: 40px;
@@ -316,7 +308,6 @@ body {
     width: 300px !important;
     text-align: start;
     resize: none;
-
   }
 
   .actionsDiv {
@@ -329,107 +320,99 @@ body {
   }
 
   .actionButtons {
-
     margin-left: 75px;
   }
-
 }
 
-@media (max-width: 970px){
-.dFlex{
-  display: block !important;
-}
-.firstRow {
-  margin-left: 50px;
-  margin-right: 50px;
-}
+@media (max-width: 970px) {
+  .dFlex {
+    display: block !important;
+  }
+  .firstRow {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 
-.secondSection{
-  max-height: fit-content !important;
-}
+  .secondSection {
+    max-height: fit-content !important;
+  }
 
-.titleDiv input {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 400px;
-}
-
-.dueDateDiv {
-  margin-right: 40px;
-  margin-bottom: 40px;
-}
-
-.dueDateDiv input {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 400px;
-}
-.secondRow {
-margin-left: 50px;
-  margin-right: 50px;
-}
-
-.form-select {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey !important;
-  width: 100px;
-
-}
-
-.categoryDiv select {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 400px;
-}
-
-
-.urgencyDiv select {
+  .titleDiv input {
     height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 400px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 400px;
+  }
+
+  .dueDateDiv {
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .dueDateDiv input {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 400px;
+  }
+  .secondRow {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .form-select {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey !important;
+    width: 100px;
+  }
+
+  .categoryDiv select {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 400px;
+  }
+
+  .urgencyDiv select {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 400px;
+  }
+
+  .thirdRow {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .descriptionDiv {
+    width: 350px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .descriptionDiv textarea {
+    height: 200px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 400px !important;
+    text-align: start;
+    resize: none;
+  }
+
+  .actionsDiv {
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .avatars {
+    margin: 50px;
+  }
+
+  .actionButtons {
+    margin-left: 75px;
+  }
 }
-
-.thirdRow {
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.descriptionDiv{
-  width: 350px;
-  margin-right: 40px;
-  margin-bottom: 40px;
-}
-
-.descriptionDiv textarea {
-  height: 200px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 400px !important;
-  text-align: start;
-  resize: none;
-
-}
-
-.actionsDiv {
-  margin-right: 40px;
-  margin-bottom: 40px;
-}
-
-.avatars{
-  margin: 50px ;
-}
-
-.actionButtons{
-
-  margin-left: 75px;
-}
-
-}
-@media (max-width: 970px){
-
+@media (max-width: 970px) {
 }
