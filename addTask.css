@@ -9,7 +9,7 @@ body {
 
 .secondSection span {
   font-weight: bold;
-  color:blue
+  color: blue
 }
 
 .allContainers {
@@ -20,6 +20,7 @@ body {
 .firstSection {
   margin: 20px;
 }
+
 .firstSection span {
   color: blue;
 }
@@ -94,14 +95,15 @@ body {
   margin-right: 100px;
   margin-bottom: 40px;
 }
+
 .urgencyDiv select {
-    height: 40px;
+  height: 40px;
   border-radius: 5px;
   border: 2px solid grey;
   width: 500px;
 }
 
-.descriptionDiv{
+.descriptionDiv {
   width: 550px;
   margin-right: 100px;
   margin-bottom: 40px;
@@ -122,11 +124,11 @@ body {
   margin-bottom: 40px;
 }
 
-.avatars{
-  margin: 50px ;
+.avatars {
+  margin: 50px;
 }
 
-.actionButtons{
+.actionButtons {
 
   margin-left: 280px;
 }
@@ -138,11 +140,11 @@ body {
   color: blue;
 }
 
-.cancelBtn button{
+.cancelBtn button {
   color: blue !important;
 }
 
-.createBtn{
+.createBtn {
   background-color: blue !important;
   color: white !important;
   padding: 15px;
@@ -151,186 +153,189 @@ body {
 }
 
 
-@media (max-width: 1500px){
-
-.titleDiv {
-  width: 450px;
-  margin-right: 60px;
-  margin-bottom: 40px;
-}
-
-.titleDiv input {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 400px;
-}
-
-.dueDateDiv {
-  margin-right: 60px;
-  margin-bottom: 40px;
-}
-
-.dueDateDiv input {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 400px;
-}
-
-.form-select {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey !important;
-  width: 400px;
-}
-
-.categoryDiv {
-  width: 450px;
-  margin-right: 60px;
-  margin-bottom: 40px;
-}
-
-.categoryDiv select {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 400px;
-}
-
-.urgencyDiv {
-  margin-right: 60px;
-  margin-bottom: 40px;
-}
-.urgencyDiv select {
-    height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 400px;
-}
-
-.descriptionDiv{
-  width: 450px;
-  margin-right: 60px;
-  margin-bottom: 40px;
-}
-
-.descriptionDiv textarea {
-  height: 200px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 400px !important;
-  text-align: start;
-  resize: none;
-
-}
-
-.actionsDiv {
-  margin-right: 60px;
-  margin-bottom: 40px;
-}
-
-.avatars{
-  margin: 50px ;
-}
-
-.actionButtons{
-
-  margin-left: 180px;
-}
-
-}
-
-@media (max-width: 1200px){
+@media (max-width: 1500px) {
 
   .titleDiv {
-  width: 350px;
-  margin-right: 40px;
-  margin-bottom: 40px;
-}
+    width: 450px;
+    margin-right: 60px;
+    margin-bottom: 40px;
+  }
 
-.titleDiv input {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 300px;
-}
-
-.dueDateDiv {
-  margin-right: 40px;
-  margin-bottom: 40px;
-}
-
-.dueDateDiv input {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 300px;
-}
-
-.form-select {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey !important;
-  width: 300px;
-}
-
-.categoryDiv {
-  width: 350px;
-  margin-right: 40px;
-  margin-bottom: 40px;
-}
-
-.categoryDiv select {
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 300px;
-}
-
-.urgencyDiv {
-  margin-right: 40px;
-  margin-bottom: 40px;
-}
-.urgencyDiv select {
+  .titleDiv input {
     height: 40px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 300px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 400px;
+  }
+
+  .dueDateDiv {
+    margin-right: 60px;
+    margin-bottom: 40px;
+  }
+
+  .dueDateDiv input {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 400px;
+  }
+
+  .form-select {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey !important;
+    width: 400px;
+  }
+
+  .categoryDiv {
+    width: 450px;
+    margin-right: 60px;
+    margin-bottom: 40px;
+  }
+
+  .categoryDiv select {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 400px;
+  }
+
+  .urgencyDiv {
+    margin-right: 60px;
+    margin-bottom: 40px;
+  }
+
+  .urgencyDiv select {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 400px;
+  }
+
+  .descriptionDiv {
+    width: 450px;
+    margin-right: 60px;
+    margin-bottom: 40px;
+  }
+
+  .descriptionDiv textarea {
+    height: 200px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 400px !important;
+    text-align: start;
+    resize: none;
+
+  }
+
+  .actionsDiv {
+    margin-right: 60px;
+    margin-bottom: 40px;
+  }
+
+  .avatars {
+    margin: 50px;
+  }
+
+  .actionButtons {
+
+    margin-left: 180px;
+  }
+
 }
 
-.descriptionDiv{
-  width: 350px;
-  margin-right: 40px;
-  margin-bottom: 40px;
+@media (max-width: 1200px) {
+
+  .titleDiv {
+    width: 350px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .titleDiv input {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 300px;
+  }
+
+  .dueDateDiv {
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .dueDateDiv input {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 300px;
+  }
+
+  .form-select {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey !important;
+    width: 300px;
+  }
+
+  .categoryDiv {
+    width: 350px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .categoryDiv select {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 300px;
+  }
+
+  .urgencyDiv {
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .urgencyDiv select {
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 300px;
+  }
+
+  .descriptionDiv {
+    width: 350px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .descriptionDiv textarea {
+    height: 200px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    width: 300px !important;
+    text-align: start;
+    resize: none;
+
+  }
+
+  .actionsDiv {
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .avatars {
+    margin: 50px;
+  }
+
+  .actionButtons {
+
+    margin-left: 75px;
+  }
+
 }
 
-.descriptionDiv textarea {
-  height: 200px;
-  border-radius: 5px;
-  border: 2px solid grey;
-  width: 300px !important;
-  text-align: start;
-  resize: none;
-
-}
-
-.actionsDiv {
-  margin-right: 40px;
-  margin-bottom: 40px;
-}
-
-.avatars{
-  margin: 50px ;
-}
-
-.actionButtons{
-
-  margin-left: 75px;
-}
-
-}
-
+<<<<<<< HEAD
 @media (max-width: 970px){
 .dFlex{
   display: block !important;
@@ -429,3 +434,10 @@ margin-left: 50px;
 @media (max-width: 970px){
 
 }
+=======
+@media (max-width: 970px) {
+  .dFlex {
+    display: block !important;
+  }
+}
+>>>>>>> 5615814f3bd16d68c6674d26314ccc2d645d461c
