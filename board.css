@@ -13,19 +13,21 @@ body {
   background-color: rgba(219, 255, 196, 0.473);
   font-family: pt-sans;
 }
-#columns-container {
+.columns-container {
   height: 95%;
-  width: 85%;
+  width: 95%;
 
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 10px;
+  flex-wrap: wrap;
 }
 .column {
   /* border-radius: 1%;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px; */
+  min-width: 220px;
   width: 23%;
   height: 92%;
   position: relative;
@@ -39,6 +41,7 @@ body {
   transition: all 100ms;
   flex-grow: 1;
 }
+
 .column::before {
   position: absolute;
   top: -40px;
@@ -85,8 +88,17 @@ body {
 .fourth::before {
   content: "DONE";
 }
-#columns-container.small {
+.small {
   margin-right: 10px;
   margin-left: auto;
   width: calc(100% - 160px);
+  width: 85%;
+}
+@media (max-width: 960px) {
+  .column {
+    height: 40%;
+  }
+  .columns-container {
+    justify-content: space-around;
+  }
 }
