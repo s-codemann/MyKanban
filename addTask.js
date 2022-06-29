@@ -30,7 +30,7 @@ async function addUser(e) {
     createdAt,
     id,
   });
-  await backend.setItem("users", JSON.stringify(users));
+  await backend.setItem("users", users);
   counter++;
   await backend.setItem("counter", counter);
   window.location.href = "./index.html";
