@@ -16,6 +16,8 @@ body {
 .tableHeadline {
   display: flex;
   margin-bottom: 8px;
+  margin-top: 25px;
+
 }
 
 table {
@@ -37,10 +39,6 @@ table {
   height: 10px;
 }
 
-.headline {
-  margin: 0;
-}
-
 .margin0 {
   margin: 0;
 }
@@ -50,17 +48,19 @@ table {
 }
 
 .marginBottom {
-  margin-bottom: 32px;
+  margin-bottom: 32px !important;
 }
 
 .assignedToHeadline {
   width: 35%;
   text-align: center;
+  font-weight: bold;
 }
 
 .categoryHeadline {
   width: 25%;
   text-align: center;
+  font-weight: bold;
 }
 
 .detailsContainer {
@@ -104,10 +104,12 @@ table {
 
 .detailsHeadline {
   display: block;
+  font-weight: bold;
 }
 
 .detailsHeadlineResponsiv {
   display: none;
+  font-weight: bold;
 }
 
 @media (max-width: 678px) {

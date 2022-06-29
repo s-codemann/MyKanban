@@ -5,10 +5,7 @@ let description;
 let catergory;
 let urgency;
 let counter;
-<<<<<<< HEAD
-=======
 let id;
->>>>>>> 5e163f35c38492ed39f282075c5be791c22edb2a
 
 async function addUser(e) {
   e.preventDefault();
