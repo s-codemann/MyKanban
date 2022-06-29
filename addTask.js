@@ -5,22 +5,40 @@ let description;
 let catergory;
 let urgency;
 let counter;
+<<<<<<< HEAD
+=======
+let id;
+>>>>>>> 5e163f35c38492ed39f282075c5be791c22edb2a
 
-
-function addUser(e) {
+async function addUser(e) {
   e.preventDefault();
   title = document.getElementById("title").value;
   date = document.getElementById("date").value;
   description = document.getElementById("description").value;
   catergory = document.getElementById("category").value;
   urgency = document.getElementById("urgency").value;
+  id = counter;
   let time = new Date().getTime();
   let createdAt = new Date(time).toLocaleString();
-  users.push({ title, date, description, catergory, urgency, date, createdAt});
-  backend.setItem('users', JSON.stringify(users));
-  clearInput()
-}
+  console.log(createdAt);
+  e.preventDefault();
 
+  users.push({
+    title,
+    date,
+    description,
+    catergory,
+    urgency,
+    date,
+    createdAt,
+    id,
+  });
+  await backend.setItem("users", JSON.stringify(users));
+  counter++;
+  await backend.setItem("counter", counter);
+  window.location.href = "./index.html";
+  clearInput();
+}
 
 function clearInput() {
   title = document.getElementById("title");
@@ -37,13 +55,13 @@ function clearInput() {
 
 async function init() {
   await downloadFromServer();
-  users = JSON.parse(backend.getItem('users')) || [];
+  counter = backend.getItem("counter") || 1;
+  users = JSON.parse(backend.getItem("users")) || [];
 }
 
 function deleteUser() {
-  backend.deleteItem('users');
+  backend.deleteItem("users");
 }
-
 
 // let title;
 // console.log(jsonFromServer);
