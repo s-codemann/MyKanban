@@ -43,29 +43,31 @@ body {
   width: 23%;
   height: 100%;
   position: relative;
-  background-color: rgb(255, 251, 246);
+  background-color: rgba(255, 251, 246, 0.536);
   box-shadow: 5px 5px 10px 0px rgb(125, 125, 125);
   text-shadow: 0px 0px white;
   transition: all 200ms;
   /* display: flex; */
   align-items: center;
   flex-direction: column;
-  overflow: auto;
+  overflow: scroll;
   padding-top: 40px;
+  border-radius: 10px;
 }
 .column > * {
   width: 100%;
 }
 .column:hover {
   /* height: 100%; */
-  transition: all 100ms;
+  /* transition: all 100ms; */
 }
 
 .column::before {
-  position: fixed;
+  position: absolute;
   top: 0px;
 
   right: 10%;
+
   width: 50%;
   height: 80px;
   text-align: center;
@@ -122,6 +124,11 @@ body {
 /*
 Task styles
 */
+.tasks-cont {
+  overflow: scroll;
+  position: relative;
+  z-index: 50;
+}
 .task-cont {
   margin-bottom: 5px;
   border-bottom: 2px solid green;
@@ -137,20 +144,24 @@ Task styles
   flex-direction: column;
   justify-content: start;
   padding-bottom: 10px;
+  border-radius: 10px;
   /* height: fit-content; */
   /* height: max-content; */
+}
+.task-cont:last-child {
+  border: none;
 }
 .task-cont > * {
   max-width: 220px;
   transition: all 200ms;
 }
 .task-cont > *:hover {
-  max-width: 250px;
+  max-width: 220px;
 }
 .task-cont:hover {
   background-color: rgba(205, 98, 15, 0.318);
   transition: all 50ms;
-  flex-basis: 100%;
+  /* flex-basis: 100%; */
 }
 .task-title {
   border-bottom: 1px dotted lightseagreen;
@@ -164,6 +175,8 @@ Task styles
 .task-description {
   opacity: 0.6;
   margin-left: 10px;
+  /* word-break: break-all; */
+  white-space: normal;
 }
 @media (max-width: 1080px) {
   .column {
@@ -191,7 +204,8 @@ Task styles
   }
   .column {
     height: 90%;
-    min-width: 70%;
+    width: 70%;
+    min-width: 220px;
   }
   .column:hover {
     /* height: 90%; */
@@ -215,7 +229,7 @@ Task styles
 
 .show-everything {
   max-height: unset;
-  min-height: unset;
+
   overflow: scroll;
   flex-basis: 100%;
   /* height: max-content; */
