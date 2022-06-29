@@ -1,5 +1,3 @@
-let users = [];
-
 function addBacklog() {
     let backlog = document.getElementById('backlogItem')
     backlog.innerHTML = ``;
