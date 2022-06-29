@@ -1,9 +1,12 @@
-let users = [];
+// let tasks = [];
+
 
 function addBacklog() {
     let backlog = document.getElementById('backlogItem')
     backlog.innerHTML = ``;
+    console.log (backlog);
     for (let i = 0; i < 8; i++) {
+        let task=tasks[i];
         backlog.innerHTML += `
         <div id="backlogContainer${i}" class="backlogContainer urgencyColorRed">
                 <div class="assignedTo" class="category">
@@ -13,15 +16,17 @@ function addBacklog() {
                         <p class="fontColor margin0">Email</p>
                     </div>
                 </div>
-                <p class="category">Marketing</p>
+                <p class="category">${task["catergory"]}</p>
                 <div class="detailsContainer">
                     <h3 class="fontColor detailsHeadlineResponsiv">DETAILS</h3>
                     <p class="details">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    created at:&nbsp${task["createdAt"]} <br>
+                        ${task["description"]}.
                     </p>
                 </div>
             </div>
         </div>
         `;
     }
+
 }

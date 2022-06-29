@@ -2,7 +2,7 @@ let tasks = [];
 let title;
 let date;
 let description;
-let catergory;
+let category;
 let urgency;
 let counter;
 let id;
@@ -11,7 +11,7 @@ async function addTask(e) {
   title = document.getElementById("title").value;
   date = document.getElementById("date").value;
   description = document.getElementById("description").value;
-  catergory = document.getElementById("category").value;
+  category = document.getElementById("category").value;
   urgency = document.getElementById("urgency").value;
   let boardColumn = "to-do";
   id = counter;
@@ -24,7 +24,7 @@ async function addTask(e) {
     title,
     date,
     description,
-    catergory,
+    category,
     urgency,
     date,
     createdAt,
@@ -43,12 +43,12 @@ function clearInput() {
   title = document.getElementById("title");
   date = document.getElementById("date");
   description = document.getElementById("description");
-  catergory = document.getElementById("category");
+  category = document.getElementById("category");
   urgency = document.getElementById("urgency");
   title.value = ``;
   date.value = ``;
   description.value = ``;
-  catergory.value = ``;
+  category.value = ``;
   urgency.value = ``;
 }
 
