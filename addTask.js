@@ -32,6 +32,7 @@ async function addTask(e) {
     id,
     boardColumn,
   });
+  console.log(tasks);
   await backend.setItem("tasks", tasks);
   counter++;
   await backend.setItem("counter", counter);
@@ -55,7 +56,7 @@ function clearInput() {
 async function init() {
   await downloadFromServer();
   counter = backend.getItem("counter") || 1;
-  tasks = JSON.parse(backend.getItem("tasks")) || [];
+  tasks = backend.getItem("tasks") || [];
 }
 
 function deleteTask() {
