@@ -6,7 +6,11 @@ let catergory;
 let urgency;
 let counter;
 let id;
-async function addUser(e) {
+
+
+
+function addUser(e) {
+  e.preventDefault();
   title = document.getElementById("title").value;
   date = document.getElementById("date").value;
   description = document.getElementById("description").value;
@@ -31,6 +35,9 @@ async function addUser(e) {
   counter++;
   backend.setItem("counter", counter);
   clearInput();
+  users.push({ title, date, description, catergory, urgency, date, createdAt});
+  backend.setItem('users', JSON.stringify(users));
+  clearInput()
 }
 
 function clearInput() {
