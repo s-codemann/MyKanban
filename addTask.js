@@ -8,7 +8,6 @@ let counter;
 let id;
 
 async function addTask(e) {
-  e.preventDefault();
   title = document.getElementById("title").value;
   date = document.getElementById("date").value;
   description = document.getElementById("description").value;
