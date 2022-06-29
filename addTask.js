@@ -5,19 +5,31 @@ let description;
 let catergory;
 let urgency;
 let counter;
-
-function addUser(e) {
+let id;
+async function addUser(e) {
   title = document.getElementById("title").value;
   date = document.getElementById("date").value;
   description = document.getElementById("description").value;
   catergory = document.getElementById("category").value;
   urgency = document.getElementById("urgency").value;
+  id = counter;
   let time = new Date().getTime();
   let createdAt = new Date(time).toLocaleString();
   console.log(createdAt);
   e.preventDefault();
-  users.push({ title, date, description, catergory, urgency, date, createdAt });
-  backend.setItem("users", JSON.stringify(users));
+  users.push({
+    title,
+    date,
+    description,
+    catergory,
+    urgency,
+    date,
+    createdAt,
+    id,
+  });
+  await backend.setItem("users", JSON.stringify(users));
+  counter++;
+  backend.setItem("counter", counter);
   clearInput();
 }
 
