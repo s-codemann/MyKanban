@@ -35,7 +35,7 @@
     </script>
   </head>
 
-  <body onload="init()">
+  <body onload="init(); loadAvatars()">
     <main class="small">
       <div id="sidebar-cont"></div>
       <div class="allContainers">
@@ -98,20 +98,19 @@
                   id="description"
                   size="200"
                   style="font-size: 12pt; height: 200px; width: 500px"
-                  placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, saepe cumque nemo ab iste officiis distinctio dignissimos natus rerum nam sint, id optio ut minima sapiente dolores repellat. Quis, eaque!"
+                  placeholder="Add description..."
                 ></textarea>
               </div>
               <div class="actionsDiv">
                 <span
                   >ASSIGNED TO
                   <div class="">
-                    <div class="avatars">avatar</div>
-                    <div><img src="img/" alt="" /></div>
+                    <div class="avatars" id="avatars" >avatar</div>
                   </div>
                 </span>
                 <div class="actionButtons dFlex">
                   <button id="cancel" class="cancelBtn">CANCEL</button>
-                  <button id="create" class="createBtn">CREATE TASK</button>
+                  <button id="create" class="createBtn disabled" disabled>CREATE TASK</button>
                 </div>
               </div>
             </div>
@@ -119,5 +118,6 @@
         </form>
       </div>
     </main>
+
   </body>
 </html>
