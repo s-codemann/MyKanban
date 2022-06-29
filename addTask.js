@@ -1,16 +1,13 @@
-let users = [];
+let tasks = [];
 let title;
 let date;
 let description;
 let catergory;
 let urgency;
 let counter;
-<<<<<<< HEAD
-=======
 let id;
->>>>>>> 5e163f35c38492ed39f282075c5be791c22edb2a
 
-async function addUser(e) {
+async function addTask(e) {
   e.preventDefault();
   title = document.getElementById("title").value;
   date = document.getElementById("date").value;
@@ -23,7 +20,7 @@ async function addUser(e) {
   console.log(createdAt);
   e.preventDefault();
 
-  users.push({
+  tasks.push({
     title,
     date,
     description,
@@ -33,7 +30,7 @@ async function addUser(e) {
     createdAt,
     id,
   });
-  await backend.setItem("users", users);
+  await backend.setItem("tasks", tasks);
   counter++;
   await backend.setItem("counter", counter);
   window.location.href = "./index.html";
@@ -56,11 +53,11 @@ function clearInput() {
 async function init() {
   await downloadFromServer();
   counter = backend.getItem("counter") || 1;
-  users = JSON.parse(backend.getItem("users")) || [];
+  tasks = JSON.parse(backend.getItem("tasks")) || [];
 }
 
-function deleteUser() {
-  backend.deleteItem("users");
+function deleteTask() {
+  backend.deleteItem("taks");
 }
 
 // let title;
