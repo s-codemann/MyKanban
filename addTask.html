@@ -41,12 +41,12 @@
           <h2 class="bold">Add Task</h2>
           <span>Learning Managment System Projekt</span>
         </div>
-        <form onsubmit="addUser(event)">
+        <form onsubmit="addTask(event)">
           <div class="secondSection">
             <div class="firstRow dFlex">
               <div class="titleDiv d-flex-col">
                 <span>TITLE</span>
-                <input 
+                <input
                   id="title"
                   type="text"
                   placeholder="Type your title here"
@@ -61,7 +61,8 @@
             <div class="secondRow dFlex">
               <div class="categoryDiv d-flex-col">
                 <span>CATEGORY</span>
-                <select required
+                <select
+                  required
                   class="form-select"
                   id="category"
                   aria-label="Default select example"
@@ -75,7 +76,8 @@
               </div>
               <div class="urgencyDiv d-flex-col">
                 <span>URGENCY</span>
-                <select required
+                <select
+                  required
                   id="urgency"
                   class="form-select"
                   aria-label="Default select example"
@@ -89,7 +91,8 @@
             <div class="thirdRow dFlex">
               <div class="descriptionDiv d-flex-col">
                 <span>DESCRIPTION</span>
-                <textarea required
+                <textarea
+                  required
                   id="description"
                   size="200"
                   style="font-size: 12pt; height: 200px; width: 500px"
@@ -106,9 +109,7 @@
                 </span>
                 <div class="actionButtons dFlex">
                   <button id="cancel" class="cancelBtn">CANCEL</button>
-                  <button id="create" class="createBtn">
-                    CREATE TASK
-                  </button>
+                  <button id="create" class="createBtn">CREATE TASK</button>
                 </div>
               </div>
             </div>
