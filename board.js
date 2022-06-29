@@ -14,4 +14,9 @@ async function tasksToBoard() {
       .append(taskCont);
   });
 }
-tasksToBoard();
+
+async function initBoard(){
+  await dowloadFromServer();
+  tasksToBoard();
+}
+initBoard();
