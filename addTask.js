@@ -1,10 +1,10 @@
 let users = [];
 let title;
-console.log(jsonFromServer);
 let date;
 let description;
 let catergory;
 let urgency;
+
 
 function addUser(e) {
   title = document.getElementById("title").value;
@@ -12,11 +12,13 @@ function addUser(e) {
   description = document.getElementById("description").value;
   catergory = document.getElementById("category").value;
   urgency = document.getElementById("urgency").value;
+  let time = new Date().getTime();
+  let createdAt = new Date(time).toLocaleString();
+  console.log(createdAt)
   e.preventDefault();
-  users.push({ title, date, description, catergory, urgency });
+  users.push({ title, date, description, catergory, urgency, date, createdAt});
   backend.setItem('users', JSON.stringify(users));
   clearInput()
-
 }
 
 
@@ -38,7 +40,7 @@ async function init() {
   users = JSON.parse(backend.getItem('users')) || [];
 }
 
-function deleteUser(name) {
+function deleteUser() {
   backend.deleteItem('users');
 }
 
