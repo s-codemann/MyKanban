@@ -4,6 +4,7 @@ let date;
 let description;
 let catergory;
 let urgency;
+let counter;
 
 
 function addUser(e) {
