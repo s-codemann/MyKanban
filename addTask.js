@@ -24,12 +24,11 @@ let catergory;
 let urgency;
 let counter;
 let id;
-let avatarSelectet = false;
 let selectetAvatar;
 
 async function addTask(e) {
-  if (avatarSelectet == true) {
-    title = document.getElementById("title").value;
+
+  title = document.getElementById("title").value;
   date = document.getElementById("date").value;
   description = document.getElementById("description").value;
   catergory = document.getElementById("category").value;
@@ -59,8 +58,8 @@ async function addTask(e) {
   await backend.setItem("counter", counter);
   window.location.href = "./index.html";
   clearInput();
-  }
 }
+
 
 function clearInput() {
   title = document.getElementById("title");

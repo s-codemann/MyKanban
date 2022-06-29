@@ -127,14 +127,17 @@ body {
 .actionsDiv {
   margin-right: 100px;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .avatars {
-  margin: 50px;
+  margin: 15px;
 }
 
 .actionButtons {
-  margin-left: 280px;
+  margin-left: 290px;
 }
 
 .actionButtons button {
@@ -257,12 +260,8 @@ body {
     margin-bottom: 40px;
   }
 
-  .avatars {
-    margin: 50px;
-  }
-
   .actionButtons {
-    margin-left: 180px;
+    margin-left: 190px;
   }
 }
 
@@ -344,12 +343,8 @@ body {
     margin-bottom: 40px;
   }
 
-  .avatars {
-    margin: 50px;
-  }
-
   .actionButtons {
-    margin-left: 75px;
+    margin-left: 90px;
   }
 }
 
@@ -437,12 +432,8 @@ body {
     margin-bottom: 40px;
   }
 
-  .avatars {
-    margin: 50px;
-  }
-
   .actionButtons {
-    margin-left: 75px;
+    margin-left: 185px;
   }
 }
 
