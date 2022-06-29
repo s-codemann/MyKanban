@@ -35,7 +35,7 @@
     </script>
   </head>
 
-  <body onload="init()">
+  <body onload="init(); loadAvatars()">
     <main class="small">
       <div id="sidebar-cont"></div>
       <div class="allContainers">
@@ -69,11 +69,11 @@
                   id="category"
                   aria-label="Default select example"
                 >
-                  <option value="Human resources">Human Resources</option>
-                  <option value="Marketing">Marketing</option>
-                  <option value="Production">Production</option>
-                  <option value="Sales">Sales</option>
-                  <option value="Warehouse">Warehouse</option>
+                  <option value="humanResources">Human Resources</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="production">Production</option>
+                  <option value="sales">Sales</option>
+                  <option value="warehouse">Warehouse</option>
                 </select>
               </div>
               <div class="urgencyDiv d-flex-col">
@@ -105,13 +105,12 @@
                 <span
                   >ASSIGNED TO
                   <div class="">
-                    <div class="avatars">avatar</div>
-                    <div><img src="img/" alt="" /></div>
+                    <div class="avatars" id="avatars" >avatar</div>
                   </div>
                 </span>
                 <div class="actionButtons dFlex">
                   <button id="cancel" class="cancelBtn">CANCEL</button>
-                  <button id="create" class="createBtn">CREATE TASK</button>
+                  <button id="create" class="createBtn disabled" disabled>CREATE TASK</button>
                 </div>
               </div>
             </div>
@@ -119,5 +118,6 @@
         </form>
       </div>
     </main>
+
   </body>
 </html>

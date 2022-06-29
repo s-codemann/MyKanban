@@ -156,6 +156,29 @@ body {
   border-radius: 8px;
 }
 
+.avatarStyle {
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+  margin-left: 4px;
+  margin-right: 4px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.avatarStyle:hover {
+  opacity: 1;
+}
+
+.avatarSelected {
+  border: solid 2px var(--our-color);
+  opacity: 1;
+}
+
+.disabled {
+  background-color: #737eb3 !important;
+}
+
 @media (max-width: 1500px) {
   .titleDiv {
     width: 450px;

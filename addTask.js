@@ -1,17 +1,38 @@
 let tasks = [];
+let avatarsDatas = [
+  {
+    'picture': 'img/a1.jpg',
+    'name': 'John Doe',
+    'email': 'john.doe@.company-email.com',
+  },
+  {
+    'picture': 'img/a2.jpg',
+    'name': 'Clara Stuff',
+    'email': 'clara.stuff@.company-email.com',
+  },
+  {
+    'picture': 'img/a3.jpg',
+    'name': 'Dean Specter',
+    'email': 'dean.specter@.company-email.com',
+  }
+]
+  ;
 let title;
 let date;
 let description;
-let category;
+let catergory;
 let urgency;
 let counter;
 let id;
+let avatarSelectet = false;
+let selectetAvatar;
 
 async function addTask(e) {
-  title = document.getElementById("title").value;
+  if (avatarSelectet == true) {
+    title = document.getElementById("title").value;
   date = document.getElementById("date").value;
   description = document.getElementById("description").value;
-  category = document.getElementById("category").value;
+  catergory = document.getElementById("category").value;
   urgency = document.getElementById("urgency").value;
   let boardColumn = "to-do";
   id = counter;
@@ -24,12 +45,13 @@ async function addTask(e) {
     title,
     date,
     description,
-    category,
+    catergory,
     urgency,
     date,
     createdAt,
     id,
     boardColumn,
+    selectetAvatar
   });
   console.log(tasks);
   await backend.setItem("tasks", tasks);
@@ -37,18 +59,19 @@ async function addTask(e) {
   await backend.setItem("counter", counter);
   window.location.href = "./index.html";
   clearInput();
+  }
 }
 
 function clearInput() {
   title = document.getElementById("title");
   date = document.getElementById("date");
   description = document.getElementById("description");
-  category = document.getElementById("category");
+  catergory = document.getElementById("category");
   urgency = document.getElementById("urgency");
   title.value = ``;
   date.value = ``;
   description.value = ``;
-  category.value = ``;
+  catergory.value = ``;
   urgency.value = ``;
 }
 
@@ -60,4 +83,26 @@ async function init() {
 
 function deleteTask() {
   backend.deleteItem("tasks");
+}
+
+function loadAvatars() {
+  let avatars = document.getElementById('avatars');
+  avatars.innerHTML = ``;
+  for (let i = 0; i < avatarsDatas.length; i++) {
+    let image = avatarsDatas[i]['picture'];
+    avatars.innerHTML += `<img src="${image}" class="avatarStyle" id="avatar${i}"onclick="selectAvatar(${i})">`;
+  }
+}
+
+function selectAvatar(i) {
+  let create = document.getElementById('create');
+  let elems = document.querySelectorAll(".avatarSelected");
+  let avatar = document.getElementById('avatar' + i);
+  [].forEach.call(elems, function (el) {
+    el.classList.remove("avatarSelected");
+  });
+  avatar.classList.toggle('avatarSelected');
+  create.classList.remove('disabled')
+  create.disabled = false;
+  selectetAvatar = avatarsDatas[i];
 }
