@@ -14,6 +14,7 @@ async function addTask(e) {
   description = document.getElementById("description").value;
   catergory = document.getElementById("category").value;
   urgency = document.getElementById("urgency").value;
+  let boardColumn = "to-do";
   id = counter;
   let time = new Date().getTime();
   let createdAt = new Date(time).toLocaleString();
@@ -29,6 +30,7 @@ async function addTask(e) {
     date,
     createdAt,
     id,
+    boardColumn,
   });
   await backend.setItem("tasks", tasks);
   counter++;
@@ -57,7 +59,7 @@ async function init() {
 }
 
 function deleteTask() {
-  backend.deleteItem("taks");
+  backend.deleteItem("tasks");
 }
 
 // let title;
