@@ -93,6 +93,10 @@ body {
   margin-left: auto;
   width: calc(100% - 160px);
 }
+.task-cont {
+  margin-bottom: 5px;
+  border-bottom: 2px solid green;
+}
 @media (max-width: 960px) {
   .column {
     height: 40%;
