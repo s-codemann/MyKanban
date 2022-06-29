@@ -7,6 +7,7 @@ let urgency;
 
 
 function addUser(e) {
+  e.preventDefault();
   title = document.getElementById("title").value;
   date = document.getElementById("date").value;
   description = document.getElementById("description").value;
@@ -14,8 +15,6 @@ function addUser(e) {
   urgency = document.getElementById("urgency").value;
   let time = new Date().getTime();
   let createdAt = new Date(time).toLocaleString();
-  console.log(createdAt)
-  e.preventDefault();
   users.push({ title, date, description, catergory, urgency, date, createdAt});
   backend.setItem('users', JSON.stringify(users));
   clearInput()
