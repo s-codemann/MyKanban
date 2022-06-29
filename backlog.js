@@ -1,8 +1,9 @@
-let users = [];
+// let users = [];
 
 function addBacklog() {
     let backlog = document.getElementById('backlogItem')
     backlog.innerHTML = ``;
+    console.log (backlog);
     for (let i = 0; i < 8; i++) {
         backlog.innerHTML += `
         <div id="backlogContainer${i}" class="backlogContainer urgencyColorRed">
