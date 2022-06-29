@@ -1,6 +1,14 @@
+:root {
+  --our-color: #1e3190;
+}
+
 body {
   margin: 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: PT Sans;
+}
+
+.headline {
+  margin: 0;
 }
 
 .bold {
@@ -9,24 +17,22 @@ body {
 
 .secondSection span {
   font-weight: bold;
-  color: blue;
+  color: var(--our-color);
 }
 
 .allContainers {
   position: relative;
   z-index: 5;
-}
-
-.firstSection {
-  margin: 20px;
+  margin-top: 80px;
+  margin-right: 20px;
+  margin-left: 8px;
 }
 
 .firstSection span {
-  color: blue;
+  color: var(--our-color);
 }
 
 .secondSection {
-  margin: 20px;
   background-color: #f4f3fb;
   padding: 25px;
   max-height: fit-content !important;
@@ -135,15 +141,15 @@ body {
   background: none;
   border: none;
   font-weight: bold;
-  color: blue;
+  color: var(--our-color);
 }
 
 .cancelBtn button {
-  color: blue !important;
+  color: var(--our-color) !important;
 }
 
 .createBtn {
-  background-color: blue !important;
+  background-color: var(--our-color) !important;
   color: white !important;
   padding: 15px;
   margin-left: 25px;
@@ -328,6 +334,7 @@ body {
   .dFlex {
     display: block !important;
   }
+
   .firstRow {
     margin-left: 50px;
     margin-right: 50px;
@@ -355,6 +362,7 @@ body {
     border: 2px solid grey;
     width: 400px;
   }
+
   .secondRow {
     margin-left: 50px;
     margin-right: 50px;
@@ -414,5 +422,5 @@ body {
     margin-left: 75px;
   }
 }
-@media (max-width: 970px) {
-}
+
+@media (max-width: 970px) {}
