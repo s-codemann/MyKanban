@@ -1,4 +1,4 @@
-let users = [];
+let tasks = [];
 let title;
 let date;
 let description;
@@ -7,20 +7,21 @@ let urgency;
 let counter;
 let id;
 
-async function addUser(e) {
+async function addTask(e) {
   e.preventDefault();
   title = document.getElementById("title").value;
   date = document.getElementById("date").value;
   description = document.getElementById("description").value;
   catergory = document.getElementById("category").value;
   urgency = document.getElementById("urgency").value;
+  let boardColumn = "to-do";
   id = counter;
   let time = new Date().getTime();
   let createdAt = new Date(time).toLocaleString();
   console.log(createdAt);
   e.preventDefault();
 
-  users.push({
+  tasks.push({
     title,
     date,
     description,
@@ -29,8 +30,9 @@ async function addUser(e) {
     date,
     createdAt,
     id,
+    boardColumn,
   });
-  await backend.setItem("users", JSON.stringify(users));
+  await backend.setItem("tasks", tasks);
   counter++;
   await backend.setItem("counter", counter);
   window.location.href = "./index.html";
@@ -53,11 +55,11 @@ function clearInput() {
 async function init() {
   await downloadFromServer();
   counter = backend.getItem("counter") || 1;
-  users = JSON.parse(backend.getItem("users")) || [];
+  tasks = JSON.parse(backend.getItem("tasks")) || [];
 }
 
-function deleteUser() {
-  backend.deleteItem("users");
+function deleteTask() {
+  backend.deleteItem("tasks");
 }
 
 // let title;
