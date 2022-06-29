@@ -1,22 +1,20 @@
-let tasks;
 console.log("board.js loaded");
 async function tasksToBoard() {
-  tasks = await backend.getItem("tasks");
+  tasks = backend.getItem("tasks");
   tasks.forEach((task) => {
     let taskCont = document.createElement("div");
+    taskCont.classList.add("task-cont");
     let taskTitle = document.createElement("span");
+    taskTitle.textContent = task.title;
     let taskDescription = document.createElement("P");
     taskCont.append(taskTitle, taskDescription);
     Array.from(document.querySelectorAll(".column"))
-      .filter((column) => {
-        console.log(column.id);
-      })
+      .find((column) => column.id === task.boardColumn)
       .append(taskCont);
   });
 }
-
-async function initBoard(){
-  await dowloadFromServer();
+async function initBoard() {
+  await downloadFromServer();
   tasksToBoard();
 }
 initBoard();
