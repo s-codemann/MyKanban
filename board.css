@@ -179,7 +179,7 @@ Task styles
   white-space: normal;
 }
 .not-dragging {
-  transform: scale(0.8, 1);
+  transform: scale(0.9, 1);
 }
 @media (max-width: 1080px) {
   .column {
