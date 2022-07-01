@@ -188,7 +188,9 @@ Task styles
     flex-grow: 1;
     flex-basis: auto;
   }
-
+  .dragging {
+    opacity: 1;
+  }
   .columns-container {
     justify-content: center;
   }

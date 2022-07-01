@@ -1,5 +1,6 @@
 let taskColumns = Array.from(document.querySelectorAll(".column"));
 let boardTasks = [...document.querySelectorAll(".task-cont")];
+let columnsContainer = document.getElementById("columns-container");
 console.log("board.js loaded");
 async function tasksToBoard() {
   tasks = backend.getItem("tasks");
@@ -21,23 +22,37 @@ async function tasksToBoard() {
     overflowToggle.textContent = "^";
     overflowToggle.classList.add("overflow-toggle", "rotated");
     overflowToggle.addEventListener("click", wholeTaskVisible);
-    //draggable
-    taskColumns.forEach((column) =>
+    //draggable tasks
+    taskColumns.forEach((column) => {
+      column.addEventListener("dragstart", colDragStart);
       column.addEventListener("dragover", (ev) => {
         ev.preventDefault();
+        console
+          .log
+          //   ev.dataTransfer.getData("textCol"),
+          //   ev.dataTransfer.getData("text")
+          ();
+
         column.addEventListener("drop", taskDrop);
-        // this.style.cursor = "pointer";
-      })
-    );
-    taskCont.draggable = true;
-    taskCont.addEventListener("dragstart", taskDragStart);
-    taskCont.append(taskTitle, taskDescription, overflowToggle);
-    // taskCont.addEventListener("pointerover", textResizeGrow);
-    // taskCont.addEventListener("pointerleave", textResizeShrink);
-    taskColumns
-      .find((column) => column.id === task.boardColumn)
-      .append(taskCont);
+      });
+      taskCont.draggable = true;
+      taskCont.addEventListener("dragstart", taskDragStart);
+      taskCont.append(taskTitle, taskDescription, overflowToggle);
+      // taskCont.addEventListener("pointerover", textResizeGrow);
+      // taskCont.addEventListener("pointerleave", textResizeShrink);
+      taskColumns
+        .find((column) => column.id === task.boardColumn)
+        .append(taskCont);
+    });
   });
+
+  // draggable columns
+  columnsContainer.addEventListener("dragover", function (ev) {
+    ev.preventDefault();
+    // console.log(ev.dataTransfer.getData("textCol"));
+    // console.log(ev.target, this);
+  });
+  columnsContainer.addEventListener("drop", colDrop);
 }
 async function initBoard() {
   await downloadFromServer();
@@ -74,8 +89,80 @@ function wholeTaskVisible(ev) {
 }
 
 function taskDragStart(ev) {
-  //   ev.preventDefault();
   ev.dataTransfer.setData("text", this.id);
+  this.classList.add("dragging");
+}
+function colDragStart(ev) {
+  ev.dataTransfer.setData("textCol", this.id);
+  console.log(this.id);
+  this.classList.add("dragging");
+}
+function colDrop(ev) {
+  ev.preventDefault();
+  let transferId = ev.dataTransfer.getData("textCol");
+  //   console.log(transferId + " column dropped", ev);
+  //   console.log(
+  console.log(
+    [...document.querySelectorAll(".column")].reduce(
+      (closest, col) => {
+        // console.log(
+        //   col.getBoundingClientRect(),
+        //   col.id,
+        //   "dropped by: ",
+        //   closest
+        // );
+        //   console.log(
+        //     ev.clientX,
+        //     ev.clientY,
+        //     col.getBoundingClientRect().right,
+        //     col.getBoundingClientRect().top,
+        //     closest
+        //   );
+        let xDistance =
+          ev.clientX -
+          col.getBoundingClientRect().right -
+          parseInt(getComputedStyle(col).width) / 2;
+        let yDistance =
+          ev.clientY -
+          col.getBoundingClientRect().top -
+          parseInt(getComputedStyle(col).height) / 2;
+        // console.log(
+        //   ev.ClientY,
+        //   col.getBoundingClientRect().top,
+        //   "y-DIST:" + yDistance
+        // );
+        // if (xDistance < closest.horizontal || yDistance < closest.vertikal) {
+        //   return { horizontal: xDistance, vertikal: yDistance };
+        // }
+
+        let distanceComp = [
+          closest.horizontal - xDistance,
+          closest.vertikal - yDistance,
+        ];
+        console.log(distanceComp, xDistance, yDistance, col);
+        if (distanceComp[0] >= 0 && distanceComp[1] >= 0) {
+          return {
+            horizontal: xDistance,
+            vertikal: yDistance,
+            col,
+          };
+        } else if (distanceComp[0] >= 0 && distanceComp[1] <= 0) {
+          return {
+            horizontal: xDistance,
+            vertikal: closest.vertikal,
+            col,
+          };
+        } else if (distanceComp[1] >= 0 && distanceComp[0] <= 0) {
+          return {
+            horizontal: closest.horizontal[0],
+            vertikal: yDistance,
+            col,
+          };
+        }
+      },
+      { horizontal: 10000, vertikal: 10000 }
+    )
+  );
 }
 function taskDrop(ev) {
   //   ev.preventDefault();
@@ -85,6 +172,41 @@ function taskDrop(ev) {
   this.append(document.getElementById(transferId));
   setTaskCategories();
 }
+// function colDrop(ev) {
+//   ev.preventDefault();
+//   let transferId = ev.dataTransfer.getData("textCol");
+
+//   let insertNode =
+//     document.getElementById(transferId).nextSibling ||
+//     document.getElementById(transferId).previousSibling;
+//   let toTransferPrevSibling =
+//     document.getElementById(transferId).previousSibling;
+//   let toTransferNextSibling = document.getElementById(transferId).nextSibling;
+//   let onDropPrevSibling = this.previousSibling;
+//   let onDropNextSibling = this.nextSibling;
+
+//   if (onDropPrevSibling) {
+//     this.previousSibling.after(document.getElementById(transferId));
+//     if (toTransferNextSibling) {
+//       this.parentElement.insertBefore(
+//         this,
+//         document.getElementById(transferId).nextSibling
+//       );
+//     } else if (toTransferPrevSibling) {
+//       toTransferPrevSibling.after(this);
+//     }
+//   } else if (onDropNextSibling) {
+//     this.parentElement.insertBefore(
+//       document.getElementById(transferId),
+//       this.nextSibling
+//     );
+//     if (toTransferNextSibling) {
+//       this.parentElement.insertBefore(this, toTransferNextSibling);
+//     } else if (toTransferPrevSibling) {
+//       toTransferPrevSibling.after(this);
+//     }
+//   }
+// }
 async function setTaskCategories() {
   let tasksCopy = JSON.parse(JSON.stringify(tasks));
   console.log(tasksCopy);
@@ -99,3 +221,18 @@ async function setTaskCategories() {
     console.log("tasks saved");
   });
 }
+// if (
+//     document
+//       .getElementById(ev.dataTransfer.getData("textCol"))
+//       .parentElement.classList.contains("column")
+//   ) {
+//     column.addEventListener("drop", taskDrop);
+//   } else if (
+//     document.getElementById(ev.dataTransfer.getData("textCol"))
+//       .parentElement.id === "columns-container"
+//   ) {
+//     column.addEventListener("drop", colDrop);
+//   }
+//   console.log(this.ondrop);
+//   // this.style.cursor = "pointer";
+// })
