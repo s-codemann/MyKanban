@@ -178,6 +178,9 @@ Task styles
   /* word-break: break-all; */
   white-space: normal;
 }
+.not-dragging {
+  transform: scale(0.8, 1);
+}
 @media (max-width: 1080px) {
   .column {
     height: 50%;
@@ -190,6 +193,7 @@ Task styles
   }
   .dragging {
     opacity: 1;
+    /* display: none; */
   }
   .columns-container {
     justify-content: center;

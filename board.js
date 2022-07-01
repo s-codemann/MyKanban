@@ -95,6 +95,9 @@ function taskDragStart(ev) {
 function colDragStart(ev) {
   ev.dataTransfer.setData("textCol", this.id);
   console.log(this.id);
+  document
+    .querySelectorAll(".column")
+    .forEach((col) => col.classList.add("not-dragging"));
   this.classList.add("dragging");
 }
 function colDrop(ev) {
