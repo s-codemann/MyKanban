@@ -157,11 +157,11 @@ function colDrop(ev) {
           };
         } else if (distanceComp[1] >= 0 && distanceComp[0] <= 0) {
           return {
-            horizontal: closest.horizontal[0],
+            horizontal: closest.horizontal,
             vertikal: yDistance,
             col,
           };
-        }
+        } else console.error("scheise");
       },
       { horizontal: 10000, vertikal: 10000 }
     )
