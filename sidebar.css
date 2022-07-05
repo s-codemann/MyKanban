@@ -4,7 +4,7 @@
 
 :root {
   --our-color: #1e3190;
-} 
+}
 
 .sidebar {
   position: fixed;
@@ -107,6 +107,7 @@
 .burger-small {
   color: gray;
   left: 20px;
+  transform: translateY(-25px);
 }
 
 .d_none {

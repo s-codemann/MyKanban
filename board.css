@@ -26,12 +26,14 @@ body {
 .columns-container {
   height: 95%;
   width: 95%;
-
+  margin-top: 35px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 10px;
   flex-wrap: wrap;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .column {
   border: 2px solid orangered;
@@ -179,7 +181,8 @@ Task styles
   white-space: normal;
 }
 .not-dragging {
-  transform: scale(0.9, 1);
+  /* transform: scale(0.9, 1); */
+  background-color: blue;
 }
 @media (max-width: 1080px) {
   .column {
@@ -193,6 +196,7 @@ Task styles
   }
   .dragging {
     opacity: 1;
+    
     /* display: none; */
   }
   .columns-container {
@@ -222,7 +226,7 @@ Task styles
 }
 .overflow-toggle {
   position: absolute;
-  top: 5px;
+  top: 0px;
   right: 5px;
   transform: scale(1.5, 1);
   color: brown;

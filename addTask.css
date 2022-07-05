@@ -134,6 +134,10 @@ body {
 
 .avatars {
   margin: 15px;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  width: 200px;
 }
 
 .actionButtons {
@@ -160,12 +164,13 @@ body {
 }
 
 .avatarStyle {
-  height: 48px;
-  width: 48px;
-  border-radius: 100%;
+  height: 48px !important;
+  width: 48px !important;
+  border-radius: 50%;
   margin-left: 4px;
   margin-right: 4px;
   opacity: 0.6;
+
   cursor: pointer;
 }
 
@@ -437,4 +442,5 @@ body {
   }
 }
 
-@media (max-width: 970px) {}
+@media (max-width: 970px) {
+}

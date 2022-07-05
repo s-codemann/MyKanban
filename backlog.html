@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,46 +8,46 @@
     <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="backlog.css" />
     <script defer src="sidebar.js"></script>
-    <script src="backlog.js"></script>
     <link rel="stylesheet" href="sidebar.css" />
     <script src="mini_backend.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+    <script defer src="backlog.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript">
-        setURL(
-            "https://www.maik-engel.developerakademie.net/smallest_backend_ever"
-        );
+      setURL(
+        "https://www.sascha-brodmann.developerakademie.net/smallest_backend_ever"
+      );
     </script>
-    <script defer src="./addTask.js"></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <nav id="sidebar-cont"></nav>
     <main class="small">
-        <div class="backlog" id="backlog">
-            <h1 class="headline">Backlog</h1>
-            <span class="fontColor marginBottom">
-                Learning Management System Project
-            </span>
-            <div>
-                <div>
-                    <div class="tableHeadline">
-                        <span class="fontColor assignedToHeadline">ASSIGNED TO</span>
-                        <span class="fontColor categoryHeadline">CATEGORY</span>
-                        <span class="fontColor detailsHeadline" style="width: 40%; text-align: center">
-                            DETAILS
-                        </span>
-                    </div>
-                </div>
-                <div id="backlogItem"></div>
-
+      <div class="backlog" id="backlog">
+        <h1 class="headline">Backlog</h1>
+        <span class="fontColor marginBottom">
+          Learning Management System Project
+        </span>
+        <div>
+          <div>
+            <div class="tableHeadline">
+              <!-- <span class="fontColor headline first">ASSIGNED TO</span>
+              <span class="fontColor headline second">CATEGORY</span>
+              <span class="fontColor headline third"> DETAILS </span> -->
             </div>
+          </div>
+          <div id="backlogItems" class="backlogItems"></div>
         </div>
+      </div>
     </main>
-</body>
-
+  </body>
 </html>
