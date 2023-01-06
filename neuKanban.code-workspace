@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "..\\..\\kanban\\img"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "neuKanban"
+  }
+}

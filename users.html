@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Users</title>
+    <script defer src="sidebar.js"></script>
+    <link rel="stylesheet" href="sidebar.css" />
     <script src="mini_backend.js"></script>
     <script type="text/javascript">
       setURL(
@@ -15,14 +17,18 @@
     <link rel="stylesheet" href="users.css" />
   </head>
   <body>
+    <nav id="sidebar-cont"></nav>
     <div class="showUsers"></div>
-    <form>
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" required />
-      <input type="email" name="email" id="email" required />
-      <input type="text" name="imglink" id="imgLink" />
-      <button type="submit">Benutzer erstellen</button>
-    </form>
-    <div class="addUser">Benutzer hinzufügen</div>
+    <main class="small">
+      <form>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" autofocus required />
+        <label for="email">E-Mail</label>
+        <input type="email" name="email" id="email" required />
+        <label for="imgLink">Image-Link</label>
+        <input type="text" name="imglink" id="imgLink" />
+        <button type="submit">Create User</button>
+      </form>
+    </main>
   </body>
 </html>

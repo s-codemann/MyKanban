@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "pt-sans";
+  src: url("./fonts/pt-sans-v17-latin-ext_latin_cyrillic-ext_cyrillic-700.ttf");
+}
 * {
   margin: 0;
 }
@@ -19,6 +23,8 @@
   background-color: var(--our-color);
   box-shadow: 0 2px 5px 0px black;
   border-radius: 3px;
+  z-index: 10;
+  font-family: pt-sans;
 }
 
 .logo {
@@ -86,6 +92,7 @@
   cursor: pointer;
   transition: all 200ms;
   z-index: 10;
+  font-family: pt-sans;
 }
 
 #sidebar-toggle span {
@@ -105,7 +112,7 @@
 }
 
 .burger-small {
-  color: gray;
+  color: orangered;
   left: 20px;
   transform: translateY(-25px);
 }
@@ -156,4 +163,7 @@
   bottom: 0;
   left: 2px;
   transition: all 300ms;
+}
+.sidebar-toggle span {
+  margin-bottom: 0;
 }

@@ -53,6 +53,7 @@ function renderBacklog() {
 
 async function initBacklog() {
   await downloadFromServer();
+  checkForData();
   tasks = JSON.parse(backend.getItem("tasks"));
   storedUsers = JSON.parse(backend.getItem("users"));
   console.log(storedUsers);
@@ -81,4 +82,18 @@ function wholeTaskVisible(ev) {
   this.parentElement.parentElement.scrollIntoView();
 
   this.parentElement.scrollIntoView();
+  this.scrollIntoView();
+  console.log(this.parentElement);
+  this.parentElement.scroll(0, 0);
+}
+function checkForData() {
+  if (!backend.getItem("users")) {
+    backend.setItem("users"), JSON.stringify([]);
+  }
+  if (!backend.getItem("tasks")) {
+    backend.setItem("tasks", JSON.stringify([]));
+  }
+  if (!backend.getItem("renderOrder")) {
+    backend.setItem("renderOrder", JSON.stringify([]));
+  }
 }

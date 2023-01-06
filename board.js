@@ -7,6 +7,7 @@ let columnsContainer = document.getElementById("columns-container");
 let renderOrder;
 let renderOrderInit;
 let tasks;
+let users;
 console.log("board.js loaded");
 async function tasksToBoard() {
   tasks.forEach((task) => {
@@ -20,14 +21,26 @@ async function tasksToBoard() {
     let taskDescription = document.createElement("p");
     taskDescription.classList.add("task-description");
     taskDescription.textContent = task.description;
+    let user = users.find((user) => user.id == task.user);
+    console.log(task.user);
+
+    let userImg = document.createElement("img");
+    userImg.id = user.id;
+    userImg.title = user.userName;
+    userImg.src = user.imgLink;
+    userImg.classList.add("avatarStyle");
+
     //taskID
     //columnsContainer.addEventListener("dragover", moveCol);
     //overflow toggle
     //draggable tasks
     taskColumns.forEach((column) => {
-      column.dataset.renderIndex = renderOrder.find(
-        (orderedEl) => orderedEl.id === column.id
-      ).renderOrder;
+      if (renderOrder.find((el) => el.id === column.id)) {
+        column.dataset.renderIndex = renderOrder.find(
+          (orderedEl) => orderedEl.id === column.id
+        ).renderOrder;
+      } else column.dataset.renderIndex = 0;
+
       column.addEventListener("dragstart", colDragStart);
       //   column.addEventListener("dragover", (ev) => {
       //     ev.preventDefault();
@@ -52,7 +65,7 @@ async function tasksToBoard() {
       taskCont.addEventListener("dragstart", taskDragStart);
       taskCont.addEventListener("drop", sortTasks);
       //   taskCont.addEventListener("drop", "");
-      taskCont.append(taskTitle, taskDescription);
+      taskCont.append(taskTitle, taskDescription, userImg);
       taskCont.addEventListener("dragover", (ev) => {
         ev.preventDefault();
         ev.stopImmediatePropagation();
@@ -62,8 +75,29 @@ async function tasksToBoard() {
       taskColumns
         .find((column) => column.id === task.boardColumn)
         .append(taskCont);
-      column.addEventListener("dragover", function (ev) {
+      column.addEventListener("dragover", (ev) => {
         ev.preventDefault();
+        // console.log(this);
+        // if (
+        //   !ev.target.querySelector("middle-line") &&
+        //   ev.target.classList.contains("column")
+        // ) {
+        //   let middleCont = document.createElement("div");
+        //   middleCont.classList.add("middle-line");
+        //   ev.target.append(middleCont);
+        // }
+        // if (
+        //   !ev.target.querySelector(".left-highlight") ||
+        //   !ev.target.querySelector(".right-highlight")
+        // ) {
+        //   let highlightL = document.createElement("div");
+        //   highlightL.classList.add("left-highlight");
+        //   let highlightR = document.createElement("div");
+        //   highlightR.classList.add("right-highlight");
+        //   if (ev.clientX < getMiddle(ev.target).horCenter) {
+        //     ev.target.append(highlightL);
+        //   } else ev.target.append(highlightR);
+        // }
 
         // console.log(getMiddle(this), ev.clientX, ev.clientY);
       });
@@ -83,10 +117,12 @@ async function tasksToBoard() {
   //   });
   sortTasksForRender();
   overflowT();
+  checkForSidebar();
 }
 async function initBoard() {
   await downloadFromServer();
   tasks = JSON.parse(backend.getItem("tasks"));
+  users = JSON.parse(backend.getItem("users"));
   renderOrder = JSON.parse(backend.getItem("renderOrder"));
   boardTasks = [...document.querySelectorAll(".task-cont")];
   tasksToBoard();
@@ -130,6 +166,11 @@ function colDragStart(ev) {
   ev.dataTransfer.setData("textCol", this.id);
   console.log(this.id);
 
+  document.querySelectorAll(".column").forEach((col) => {
+    if (col !== this) {
+      col.classList.add("breathe");
+    }
+  });
   //   document
   //     .querySelectorAll(".column")
   //     .forEach((col) => col.classList.add("not-dragging"));
@@ -141,6 +182,9 @@ function colDragging(ev) {
 }
 function colDrop(ev) {
   let data = ev.dataTransfer.getData("textCol");
+  document
+    .querySelectorAll(".column")
+    .forEach((col) => col.classList.remove("breathe"));
 
   ev.preventDefault();
   if (data) {
@@ -388,7 +432,7 @@ function getPrevSiblingCount(el) {
   return [...el.parentElement.children].indexOf(el) || 0;
 }
 function initRenderOrder(elements) {
-  localStorage.setItem(
+  backend.setItem(
     "renderOrder",
     JSON.stringify(
       [...document.querySelectorAll(".task-cont")]
@@ -415,7 +459,7 @@ function setRenderOrder() {
   });
   [...columnsContainer.children].forEach((column) => {
     renderOrder.find(
-      (renderOrderElement) => renderOrderElement.id === column.id
+      (renderOrderElement) => renderOrderElement.id == column.id
     ).renderOrder = getPrevSiblingCount(column) + 1;
   });
   console.log(renderOrder);
@@ -464,5 +508,57 @@ function overflowT() {
       overflowToggle.addEventListener("click", wholeTaskVisible);
       taskC.append(overflowToggle);
     }
+    let delX = document.createElement("span");
+    delX.textContent = "x";
+    delX.classList.add("delX");
+    delX.addEventListener("click", () => {
+      taskC.parentElement.removeChild(taskC);
+      let delId = parseInt(
+        taskC.id.match(/[0-9]/g).reduce((result, number) => {
+          return result + number;
+        }, "")
+      );
+      console.log(taskC.user);
+      let deleteId = tasks.findIndex((task) => task.id === delId);
+      tasks.splice(deleteId, 1);
+      backend.setItem("tasks", JSON.stringify(tasks));
+    });
+    taskC.append(delX);
   });
+}
+function scrollColCont(ev) {
+  if (ev.dataTransfer.getData("textCol")) {
+    ev.preventDefault();
+  }
+  //  ( console.log(
+  //     this.scrollLeft,
+  //     ev.clientX,
+  //     this.getBoundingClientRect().width,
+  //     getMiddle(this).horCenter
+  //   );
+  let newScollLeft = this.scrollLeft + (ev.clientX - getMiddle(this).horCenter);
+  this.scroll({ top: 0, left: newScollLeft, behavior: "smooth" });
+  // this.scrollLeft += (ev.clientX - getMiddle(this).horCenter) / 10;
+}
+
+columnsContainer.addEventListener("dragover", scrollColCont);
+
+function checkForSidebar() {
+  window.innerWidth < 600
+    ? document.getElementById("sidebar-toggle").click()
+    : 0;
+}
+columnsContainer.addEventListener("scroll", (ev) =>
+  console.log(ev.target.scrollLeft)
+);
+function checkForData() {
+  if (!backend.getItem("users")) {
+    backend.setItem("users"), JSON.stringify([]);
+  }
+  if (!backend.getItem("tasks")) {
+    backend.setItem("tasks", JSON.stringify([]));
+  }
+  if (!backend.getItem("renderOrder")) {
+    backend.setItem("renderOrder", JSON.stringify([]));
+  }
 }

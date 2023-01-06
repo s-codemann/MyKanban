@@ -220,7 +220,7 @@ table {
   border-radius: 10px;
   position: relative;
   margin-bottom: 20px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .entry-cont img {
   height: 40px;
@@ -255,6 +255,7 @@ table {
   margin: 0;
   max-height: (100% + 1px);
   padding-left: 100px;
+  overflow: hidden;
 }
 .entry-category {
   /* width: 30%; */
@@ -284,7 +285,9 @@ table {
     top: -30px;
     left: 10px;
   }
-  .first-entry .entry-details::before {
+  .first-entry::before {
+    font-weight: bold;
+    color: var(--our-color);
     content: "DETAILS";
     position: absolute;
     top: -30px;

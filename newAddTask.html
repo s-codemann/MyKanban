@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="addTaskY.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+
+    <script defer src="sidebar.js"></script>
+    <script defer src="./addTask.js"></script>
+    <script src="./mini_backend.js"></script>
+    <script type="text/javascript">
+      setURL(
+        "https://www.sascha-brodmann.developerakademie.net/smallest_backend_ever"
+      );
+    </script>
+  </head>
+  <body onload="init()">
+    <div id="sidebar-cont"></div>
+    <main class="small">
+      <h1>Add Task</h1>
+      <form>
+        <div class="title">
+          <span>Title</span>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            pattern="[a-zA-Z0-9 ]+"
+            autofocus
+            placeholder="choose a title"
+          />
+        </div>
+        <div class="date">
+          <span>Due Date</span>
+          <input type="date" id="date" />
+
+          <span>Due Time?</span>
+          <input type="time" id="time" step="0" value="00:00" />
+        </div>
+        <div class="category">
+          <span>CATEGORY</span>
+          <select
+            class="form-select"
+            id="category"
+            aria-label="Default select example"
+            placeholder="choose a category"
+          >
+            <option value="humanResources">Human Resources</option>
+            <option value="marketing">Marketing</option>
+            <option value="production">Production</option>
+            <option value="sales">Sales</option>
+            <option value="warehouse">Warehouse</option>
+          </select>
+        </div>
+        <div class="urgency">
+          <span>URGENCY</span>
+          <select
+            id="urgency"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+        <div class="description">
+          <span>DESCRIPTION</span>
+          <textarea
+            id="description"
+            placeholder="Please enter a description for your task"
+          ></textarea>
+        </div>
+        <div class="avadiv">
+          <span>ASSIGNED TO </span>
+          <div class="avatars"></div>
+        </div>
+        <div class="actionButtons">
+          <button id="cancel" class="cancelBtn">CANCEL</button>
+          <button type="submit" id="create" class="createBtn">
+            CREATE TASK
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

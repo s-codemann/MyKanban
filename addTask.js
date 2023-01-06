@@ -94,10 +94,11 @@ function resetFor() {
     allInputElements[i].value = null;
     allInputElements[i].required = "true";
   }
+  document.getElementById("time").required = false;
 }
 async function init() {
   await downloadFromServer();
-  users = JSON.parse(backend.getItem("users"));
+  users = JSON.parse(backend.getItem("users")) || [];
   counter = backend.getItem("counter") || 1;
   tasks = JSON.parse(backend.getItem("tasks")) || [];
   showAvatars();

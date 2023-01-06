@@ -5,6 +5,12 @@
 body {
   margin: 0;
   font-family: PT Sans;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 255, 0.299),
+    white,
+    rgba(0, 0, 255, 0.512)
+  );
 }
 
 .headline {
@@ -128,7 +134,6 @@ body {
   margin-right: 100px;
   margin-bottom: 40px;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -141,28 +146,37 @@ body {
 }
 
 .actionButtons {
-  margin-left: 290px;
+  /* margin-left: 290px; */
 }
 
 .actionButtons button {
-  background: none;
   border: none;
   font-weight: bold;
-  color: var(--our-color);
+  cursor: pointer;
+  max-height: 50%;
+  margin-right: 10px;
+  border: 1px solid orangered;
 }
 
-.cancelBtn button {
+.cancelBtn {
   color: var(--our-color) !important;
+  border-radius: 20%;
+}
+.cancelBtn:hover {
+  background-color: #737eb3;
 }
 
 .createBtn {
-  background-color: var(--our-color) !important;
-  color: white !important;
+  background-color: var(--our-color);
+  color: white;
   padding: 15px;
   margin-left: 25px;
   border-radius: 8px;
 }
-
+.createBtn:hover {
+  background-color: #2b03f3;
+  transform: scale(1.1);
+}
 .avatarStyle {
   height: 48px !important;
   width: 48px !important;
@@ -266,7 +280,7 @@ body {
   }
 
   .actionButtons {
-    margin-left: 190px;
+    /* margin-left: 190px; */
   }
 }
 
@@ -349,13 +363,14 @@ body {
   }
 
   .actionButtons {
-    margin-left: 90px;
+    /* margin-left: 90px; */
   }
 }
 
 @media (max-width: 970px) {
   .dFlex {
-    display: block !important;
+    display: flex;
+    flex-direction: column;
   }
 
   .firstRow {
@@ -438,9 +453,28 @@ body {
   }
 
   .actionButtons {
-    margin-left: 185px;
+    /* margin-left: 185px; */
   }
 }
 
 @media (max-width: 970px) {
+}
+@media (max-width: 500px) {
+  .secondSection {
+    margin: 0;
+    padding: 0;
+  }
+  .firstRow {
+    margin: 0;
+  }
+  .secondRow {
+    margin: 0;
+  }
+  .thirdRow {
+    margin: 0;
+  }
+  .actionButtons {
+    display: flex;
+    flex-direction: row;
+  }
 }

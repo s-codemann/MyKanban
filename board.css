@@ -20,7 +20,11 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgba(219, 255, 196, 0.473);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 255, 0.622),
+    rgba(255, 0, 0, 0.256)
+  );
   font-family: pt-sans;
 }
 .columns-container {
@@ -34,6 +38,7 @@ body {
   flex-wrap: wrap;
   margin-left: 50px;
   margin-right: 50px;
+  overflow-x: scroll;
 }
 .column {
   border: 2px solid orangered;
@@ -55,6 +60,7 @@ body {
   overflow: scroll;
   padding-top: 40px;
   border-radius: 10px;
+  overflow-x: hidden;
 }
 .column > * {
   width: 100%;
@@ -145,7 +151,7 @@ Task styles
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding-bottom: 10px;
+  padding-bottom: 50px;
   border-radius: 10px;
   /* height: fit-content; */
   /* height: max-content; */
@@ -186,8 +192,9 @@ Task styles
 }
 @media (max-width: 1080px) {
   .column {
-    height: 50%;
+    height: 100%;
     flex-basis: 50%;
+
     /* min-height: fit-content; */
     width: 45%;
     flex-shrink: 1;
@@ -196,21 +203,34 @@ Task styles
   }
   .dragging {
     opacity: 1;
-    
+
     /* display: none; */
   }
   .columns-container {
-    justify-content: center;
+    /* min-width: 99%; */
+    height: 90%;
+    flex-wrap: nowrap;
+    margin-top: 55px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   .column:hover {
     /* height: 50%; */
   }
 }
 @media (max-width: 550px) {
+  body {
+    justify-content: flex-start;
+  }
   .columns-container {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: start;
+    width: 100%;
+    padding-left: 10px;
+    margin-left: 0px;
+    padding-right: 20px;
+    /* min-width: 200vw; */
   }
   .column {
     height: 90%;
@@ -226,8 +246,8 @@ Task styles
 }
 .overflow-toggle {
   position: absolute;
-  top: 0px;
-  right: 5px;
+  top: 5px;
+  right: 25px;
   transform: scale(1.5, 1);
   color: brown;
   cursor: pointer;
@@ -245,4 +265,65 @@ Task styles
   /* height: max-content; */
   /* max-height: 90vh; */
   padding-bottom: 20px;
+}
+.breathe {
+  animation-name: breathe;
+  animation-iteration-count: infinite;
+  animation-duration: 1500ms;
+  animation-delay: 200ms;
+}
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+    box-shadow: none;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.delX {
+  position: absolute;
+  right: 4px;
+  top: 2px;
+  opacity: 0.4;
+}
+.delX:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.avatarStyle {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 10px;
+  opacity: 1;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  transform: translate(0, 0px);
+}
+.middle-line {
+  height: 100%;
+  margin-left: 50%;
+  width: 3px;
+  background-color: rgba(0, 0, 0, 0.367);
+}
+.left-highlight {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 0;
+  background-color: rgba(255, 68, 0, 0.475);
+  z-index: 100000;
+}
+.right-highlight {
+  background-color: rgba(255, 68, 0, 0.475);
+  height: 100%;
+  width: 50%;
+  position: relative;
+  right: 0;
 }
